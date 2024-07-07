@@ -3,8 +3,6 @@ import React from "react";
 import Container from "@/app/Components/Container/Container";
 import Image from "next/image";
 import Img from "../../../../public/Imiges/pngwing 1.png";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
