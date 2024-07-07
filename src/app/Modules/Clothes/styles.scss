@@ -1,0 +1,104 @@
+.clothes {
+  padding: 47px 0 119px 0;
+}
+
+.clothes__content {
+  display: flex;
+}
+
+.clothes__box {
+  display: inline-flex;
+  align-items: center;
+  background: $bg-color;
+  padding: 75px 23px 31px 40px;
+}
+
+.clothes__wrapper {
+  display: block;
+  max-width: 335px;
+}
+
+.clothes__text {
+  color: $font-color;
+  font-size: 16px;
+  opacity: 0.5;
+  margin-bottom: 4px;
+}
+
+.clothes__title {
+  color: $font-color;
+  font-family: "sf-medium";
+  font-weight: 500;
+  font-size: 32px;
+  margin-bottom: 14px;
+}
+
+.clothes__price {
+  color: #ff2828;
+  font-family: "sf-medium";
+  font-size: 16px;
+}
+
+.clothes__link-box {
+  margin-top: 191px;
+}
+
+.clothes__link {
+  color: #121212;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 108.5%;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.clothes__boxes {
+  margin-left: 20px;
+}
+
+.clothes__product {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: $bg-color;
+  padding: 14px 42px 0 42px;
+}
+
+.clothes__subname {
+  color: $font-color;
+  font-family: "sf-medium";
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.clothes__price-text {
+  color: #72a900;
+  font-family: "sf-medium";
+  font-size: 16px;
+}
+
+.clothes__product-wrapper {
+  margin-top: 60px;
+}
+
+.clothes__product-box {
+  display: flex;
+  margin-top: 20px;
+}
+
+.clothes__product-bottom {
+  display: inline-flex;
+  background: $bg-color;
+  padding: 46px 19px 26px 26px;
+}
+
+.clothes__product-bottom:not(:first-child) {
+  margin-left: 20px;
+}
+
+.clothes__product-text {
+  max-width: 151px;
+}

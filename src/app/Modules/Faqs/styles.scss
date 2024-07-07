@@ -1,0 +1,36 @@
+.faqs .container {
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+}
+
+.faqs__wrapper {
+  max-width: 588px;
+}
+
+.faqs__title {
+  color: $font-color;
+  font-family: "sf-medium";
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.faqs__text {
+  color: #1f1e14;
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.faqs__content {
+  width: 100%;
+  max-width: 540px;
+  display: inline-flex;
+  margin-top: 40px;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.faqs__titul {
+  display: block;
+}

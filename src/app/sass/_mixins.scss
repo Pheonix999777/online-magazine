@@ -1,0 +1,13 @@
+@mixin reset-btn {
+  border-radius: 100px;
+  border: 1px solid #ff5c00;
+  color: #ff5c00;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 108.5%;
+  background: transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}

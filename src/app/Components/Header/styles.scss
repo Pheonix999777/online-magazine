@@ -1,0 +1,98 @@
+.header {
+  padding-top: 14px;
+}
+
+.header__nav {
+  padding-left: 10px;
+}
+
+.header__ul {
+  display: flex;
+  list-style: none;
+}
+
+.header__list:not(:first-child) {
+  margin-left: 20px;
+}
+
+.header__link {
+  color: #333;
+  font-family: "Inter";
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+.header__bottom {
+  display: flex;
+  align-items: center;
+  padding-top: 25px;
+}
+
+.header__logo {
+  font-family: "Inter";
+  color: #333;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.header__content {
+  width: 100%;
+  max-width: 520px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 100px;
+  border: 1px solid #eee;
+  padding: 4px 4px 4px 24px;
+  margin-left: 35px;
+}
+
+.header__content-link {
+  color: #333;
+  font-size: 14px;
+  font-family: "sf-medium";
+  text-decoration: none;
+}
+
+.header__content-link:not(:first-child) {
+  margin-left: 36px;
+}
+
+.header__category {
+  padding: 10px 23px;
+  @include reset-btn;
+  margin-left: auto;
+}
+
+.header__bottom-right {
+  display: inline-flex;
+  margin-left: auto;
+}
+
+.header__actions {
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.header__actions:not(:first-child) {
+  margin-left: 45px;
+}
+
+.header__actions-number {
+  color: #ff5c00;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 108.5%;
+  margin-left: 6px;
+}
+
+.header__login {
+  padding: 13px 23px;
+  @include reset-btn;
+  margin-left: 36px;
+}

@@ -1,0 +1,70 @@
+.hero__box {
+  width: 100%;
+  position: relative;
+  display: flex;
+  height: 490px;
+  background: #f5f5f5;
+}
+
+.hero__div {
+  padding-left: 70px;
+  background: #f5f5f5;
+}
+
+.hero__wrapper {
+  max-width: 600px;
+  margin-top: 101px;
+}
+
+.hero__title {
+  color: $black-color;
+  font-family: "sf-medium";
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 50px;
+}
+
+.hero__text {
+  max-width: 420px;
+  color: $text-color;
+  font-family: "sf-regular";
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 11px;
+}
+
+.hero__btn {
+  margin-top: 24px;
+  color: $black-color;
+  border-radius: 100px;
+  padding: 13px 23px;
+  border: 1px solid $black-color;
+  font-family: "Inter";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 108.5%;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+// carousel
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 18px;
+  background: #f5f5f5;
+}
+
+.swiper-slide img {
+  position: absolute;
+  left: calc(50% - 104px);
+  top: 10px;
+  z-index: 100;
+}
+
+.swiper-pagination {
+  padding-right: 23px;
+}
