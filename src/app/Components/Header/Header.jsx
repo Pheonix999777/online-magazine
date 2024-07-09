@@ -1,3 +1,4 @@
+"use client";
 import Link from "next/link";
 import Container from "../Container/Container";
 import "./styles.scss";
@@ -10,7 +11,13 @@ export default function Header() {
     { href: "/security-policy", label: "Политика безопасности" },
     { href: "/terms-agreement", label: "Условия соглашения" },
     { href: "/public-offer", label: "Публичная оферта" },
-    { href: "/guarantees", label: "Наши гарантии" },
+    { href: "/public-offer", label: "Наши гарантии" },
+  ];
+
+  const category = [
+    { href: "/about", label: "мальчики" },
+    { href: "/delivery-payment", label: "женщины" },
+    { href: "/pages/categories", label: "младенцы" },
   ];
 
   return (
@@ -33,15 +40,43 @@ export default function Header() {
             Women & Kids
           </a>
           <div className="header__content">
-            <Link className="header__content-link" href={"#"}>
-              мальчики
-            </Link>
-            <Link className="header__content-link" href={"#"}>
-              женщины
-            </Link>
-            <Link className="header__content-link" href={"#"}>
-              младенцы
-            </Link>
+            <span className="header__content-link">мальчики</span>
+
+            <span className="header__content-link">девочки</span>
+
+            <div className="header__downMenu">
+              <button className="header__downBtn">младенцы</button>
+              <div className="header__menu">
+                <div className="header__megaMenu">
+                  <ul className="header__menu-ul">
+                    <li className="header__menu-list">
+                      <Link
+                        className="header__menu-link"
+                        href={"/pages/categories"}
+                      >
+                        брюки
+                      </Link>
+                    </li>
+                    <li className="header__menu-list">обуви</li>
+                    <li className="header__menu-list">шапки</li>
+                  </ul>
+
+                  <ul className="header__menu-ul">
+                    <li className="header__menu-list">финки</li>
+                    <li className="header__menu-list">женщины</li>
+                    <li className="header__menu-list">куртки</li>
+                    <li className="header__menu-list">футболки</li>
+                  </ul>
+
+                  <ul className="header__menu-ul">
+                    <li className="header__menu-list">шорты</li>
+                    <li className="header__menu-list">свитеры</li>
+                    <li className="header__menu-list">аккесуары</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             <button className="header__category">
               <CgMenuGridO style={{ marginRight: "2px" }} />
               все категории

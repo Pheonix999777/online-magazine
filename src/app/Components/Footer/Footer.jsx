@@ -77,15 +77,15 @@ export default function Footer() {
               </p>
             </div>
             <div className="footer__social">
-              <a className="location__social-link" href="#">
+              <a className="footer__social-link" href="#">
                 <RiFacebookFill />
               </a>
 
-              <a className="location__social-link" href="#">
+              <a className="footer__social-link" href="#">
                 <RiInstagramFill />
               </a>
 
-              <a className="location__social-link" href="#">
+              <a className="footer__social-link" href="#">
                 <FaTwitter />
               </a>
             </div>

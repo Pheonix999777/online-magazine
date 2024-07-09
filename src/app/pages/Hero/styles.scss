@@ -1,14 +1,18 @@
+.hero {
+  padding-top: 22px;
+}
+
 .hero__box {
   width: 100%;
   position: relative;
   display: flex;
   height: 490px;
-  background: #f5f5f5;
+  background: $bg-color;
 }
 
 .hero__div {
   padding-left: 70px;
-  background: #f5f5f5;
+  background: $bg-color;
 }
 
 .hero__wrapper {
@@ -18,18 +22,15 @@
 
 .hero__title {
   color: $black-color;
-  font-family: "sf-medium";
-  font-size: 56px;
   font-weight: 500;
+  font-size: 56px;
   line-height: 50px;
 }
 
 .hero__text {
   max-width: 420px;
   color: $text-color;
-  font-family: "sf-regular";
   font-size: 16px;
-  font-weight: 400;
   margin-top: 11px;
 }
 
@@ -39,7 +40,6 @@
   border-radius: 100px;
   padding: 13px 23px;
   border: 1px solid $black-color;
-  font-family: "Inter";
   font-size: 14px;
   font-weight: 500;
   line-height: 108.5%;
@@ -55,12 +55,12 @@
 
 .swiper-slide {
   font-size: 18px;
-  background: #f5f5f5;
+  background: $bg-color;
 }
 
 .swiper-slide img {
   position: absolute;
-  left: calc(50% - 104px);
+  left: calc(50% - -140px);
   top: 10px;
   z-index: 100;
 }

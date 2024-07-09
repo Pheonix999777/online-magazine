@@ -1,5 +1,5 @@
 .clents {
-  padding-top: 45px;
+  padding-top: 50px;
   padding-bottom: 181px;
 }
 
@@ -19,23 +19,22 @@
 
 .clents__title {
   display: block;
-  color: #121212;
-  font-family: "sf-medium";
+  color: $black-color;
   font-size: 24px;
   margin-bottom: 28px;
 }
 
 .clents__wrapper {
-  background: #fff;
+  background: $light;
   box-shadow: 14px 11px 134px 0px rgba(60, 68, 99, 0.05);
   padding: 57px 52px 44px 52px;
+  margin: 20px 0;
   margin-left: 20px;
 }
 
 .clents__text {
   max-width: 250px;
   color: #5b5b5b;
-  font-family: "Rubik";
   font-size: 18px;
   font-weight: 400;
   line-height: 158%;
@@ -53,14 +52,12 @@
 
 .clents__content span {
   color: #1f1814;
-  font-family: "sf-medium";
   font-size: 16px;
   line-height: 158%;
 }
 
 .clents__content p {
   color: #1f1814;
-  font-family: "Times New Roman";
   font-size: 14px;
   font-style: italic;
   font-weight: 400;

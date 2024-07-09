@@ -15,7 +15,6 @@
 
 .footer__info {
   color: $black-color;
-  font-family: "sf-medium";
   font-size: 20px;
   line-height: 141%;
 }
@@ -28,7 +27,6 @@
 .footer__link {
   color: $text-color;
   font-size: 14px;
-  font-weight: 400;
   line-height: 141%;
   text-decoration: none;
 }
@@ -40,12 +38,21 @@
 .footer__work {
   color: $text-color;
   font-size: 14px;
-  font-weight: 400;
   line-height: 141%;
 }
 
 .footer__social {
   margin-top: 29px;
+}
+
+.footer__social-link {
+  text-decoration: none;
+  font-size: 21px;
+  color: $text-color;
+}
+
+.footer__social-link:not(:first-child) {
+  margin-left: 42px;
 }
 
 .footer__wrapper-box {

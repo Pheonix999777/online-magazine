@@ -1,4 +1,4 @@
-import magazine from "../../../../public/Imiges/Group 48096944.png";
+import magazine from "../../../../public/Imiges/Mask group.png";
 import Container from "@/app/Components/Container/Container";
 import Image from "next/image";
 import "./styles.scss";

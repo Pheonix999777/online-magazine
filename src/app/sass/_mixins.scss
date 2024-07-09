@@ -1,8 +1,7 @@
 @mixin reset-btn {
   border-radius: 100px;
-  border: 1px solid #ff5c00;
-  color: #ff5c00;
-  font-family: "Inter";
+  border: 1px solid $orange;
+  color: $orange;
   font-size: 14px;
   font-weight: 500;
   line-height: 108.5%;
@@ -10,4 +9,15 @@
   cursor: pointer;
   display: inline-flex;
   align-items: center;
+}
+
+@mixin bg-color {
+  border-radius: 3px;
+  background: $bg-color;
+}
+
+@mixin text-color {
+  color: #f00;
+  font-size: 12px;
+  text-transform: uppercase;
 }
