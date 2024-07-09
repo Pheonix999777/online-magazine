@@ -1,4 +1,4 @@
-import Clents from "./Pages/Clients/Clients";
+import Clients from "./pages/Clients/Clients";
 import Clothes from "./Pages/Clothes/Clothes";
 import Faqs from "./Pages/Faqs/Faqs";
 import Hero from "./Pages/Hero/Hero";
@@ -12,7 +12,7 @@ export default function Home() {
       <Clothes />
       <Product />
       <Faqs />
-      <Clents />
+      <Clients />
       <Location />
     </>
   );

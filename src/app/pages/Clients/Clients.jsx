@@ -12,7 +12,7 @@ import Logo6 from "../../../../public/Imiges/image 215.png";
 import Logo7 from "../../../../public/Imiges/image 214.png";
 import Logo8 from "../../../../public/Imiges/image 212.png";
 
-export default function Clents() {
+export default function Clients() {
   const clients = [
     {
       text: "все товары есть в наличии на складе",
