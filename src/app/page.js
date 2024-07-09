@@ -1,9 +1,9 @@
-import Clients from "./pages/Clients/Clients";
-import Clothes from "./Pages/Clothes/Clothes";
-import Faqs from "./Pages/Faqs/Faqs";
-import Hero from "./Pages/Hero/Hero";
-import Location from "./Pages/Location/Location";
-import Product from "./Pages/Product/Product";
+import Clients from "./src/app/pages/Clients/Clients";
+import Clothes from "./src/app/pages/Clothes/Clothes";
+import Faqs from "./src/app/pages/Faqs/Faqs";
+import Hero from "./src/app/pages/Hero/Hero";
+import Location from "./src/app/pages/Location/Location";
+import Product from "./src/app/pages/Product/Product";
 
 export default function Home() {
   return (
