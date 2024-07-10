@@ -53,7 +53,7 @@
   display: flex;
   width: 90%;
   padding-left: 70px;
-  padding-top: 20px;
+
   justify-content: space-between;
   font-size: 18px;
   background: $bg-color;
@@ -62,7 +62,6 @@
 .swiper-slide img {
   width: 380px;
   height: 490px;
-  margin-top: 20px;
 }
 
 .swiper-pagination {
