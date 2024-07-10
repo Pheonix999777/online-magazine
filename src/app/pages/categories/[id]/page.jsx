@@ -12,8 +12,6 @@ import { useState } from "react";
 import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
 import Shopping from "../../../../../public/icons/shoppingbag.svg";
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
-import InnerImageZoom from "react-inner-image-zoom";
 import ImageMagnifier from "@/app/Components/ImageMagnifer/ImageMagnifer";
 
 const Detail = () => {
