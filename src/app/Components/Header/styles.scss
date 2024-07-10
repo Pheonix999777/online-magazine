@@ -71,8 +71,7 @@
   z-index: 100;
 }
 
-.header__downMenu:hover .header__menu,
-.header__downMenu:focus-within .header__menu {
+.header__downMenu:hover .header__menu {
   display: block;
 }
 

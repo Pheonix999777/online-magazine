@@ -2,22 +2,19 @@
   padding-top: 22px;
 }
 
-.hero__box {
-  width: 100%;
-  position: relative;
-  display: flex;
-  height: 490px;
+.hero__div {
   background: $bg-color;
 }
 
-.hero__div {
-  padding-left: 70px;
+.hero__box {
+  width: 100%;
+  height: 510px;
   background: $bg-color;
 }
 
 .hero__wrapper {
   max-width: 600px;
-  margin-top: 101px;
+  margin-top: 91px;
 }
 
 .hero__title {
@@ -54,17 +51,25 @@
 }
 
 .swiper-slide {
+  display: flex;
+  width: 90%;
+  padding-left: 70px;
+  padding-top: 20px;
+  justify-content: space-between;
   font-size: 18px;
   background: $bg-color;
 }
 
 .swiper-slide img {
-  position: absolute;
-  left: calc(50% - -140px);
-  top: 10px;
-  z-index: 100;
+  width: 380px;
+  height: 490px;
+  margin-top: 20px;
 }
 
 .swiper-pagination {
   padding-right: 23px;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $black-color;
 }

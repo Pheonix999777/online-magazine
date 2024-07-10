@@ -1,7 +1,18 @@
+// next.config.js
+import path from "path";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/,
+      use: ["@svgr/webpack"],
+    });
+    return config;
+  },
   sassOptions: {
-    additionalData: `@import "./src/app/sass/_mixins.scss"; @import "./src/app/sass/_veriables.scss";`,
+    includePaths: [path.join(process.cwd(), "src/app/sass")],
+    prependData: `@import "mixins.scss"; @import "veriables.scss";`,
   },
 };
 
