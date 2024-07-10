@@ -31,6 +31,7 @@
 }
 
 .item__block {
+  position: relative;
   padding: 111px 158px;
   @include bg-color;
   margin-left: 18px;
@@ -38,6 +39,11 @@
 
 .item__block-right {
   margin-left: 73px;
+}
+
+.item__image-zoom {
+  max-width: 100%;
+  height: auto;
 }
 
 .item__spn {
@@ -159,11 +165,7 @@
 }
 
 .category__list {
-  transition: 0.5s;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .category__link {
@@ -177,6 +179,10 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .category__text {

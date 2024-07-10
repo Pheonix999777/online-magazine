@@ -11,7 +11,10 @@ import { RiArrowRightSLine } from "react-icons/ri";
 import { useState } from "react";
 import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
-import Shopping from "../../../../../public/icons/shoppingbag.svg"
+import Shopping from "../../../../../public/icons/shoppingbag.svg";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+import InnerImageZoom from "react-inner-image-zoom";
+import ImageMagnifier from "@/app/Components/ImageMagnifer/ImageMagnifer";
 
 const Detail = () => {
   const params = useParams();
@@ -63,13 +66,12 @@ const Detail = () => {
   const [activeImage, setActiveImage] = useState(false);
   const [activeProduct, setActiveProduct] = useState(products[0]);
 
-  const product = products.find((item) => item.id === parseInt(id));
+  const product = products.find((item) => item.id === parseInt(id, 10));
 
   const handleImageClick = (image) => {
     setActiveProduct(image);
     setActiveImage(true);
   };
-
   return (
     <section className="item">
       <Container>
@@ -120,19 +122,9 @@ const Detail = () => {
 
           <div className="item__block">
             {activeImage ? (
-              <Image
-                src={activeProduct}
-                alt="Selected Product"
-                width={295}
-                height={309}
-              />
+              <ImageMagnifier src={activeProduct} />
             ) : (
-              <Image
-                src={product.img}
-                alt="Selected Product"
-                width={295}
-                height={309}
-              />
+              <ImageMagnifier src={product.img} />
             )}
           </div>
 

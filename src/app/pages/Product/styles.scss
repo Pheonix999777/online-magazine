@@ -16,11 +16,7 @@
 }
 
 .product__list {
-  transition: 0.5s;
   cursor: pointer;
-  &:hover {
-    transform: scale(1.05);
-  }
 }
 
 .product__link {
@@ -34,6 +30,10 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
 
 .product__text {
