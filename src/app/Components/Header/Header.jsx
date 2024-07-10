@@ -42,7 +42,7 @@ export default function Header() {
 
         <div className="header__bottom">
           <a className="header__logo" href="/">
-            Women & Kids
+            Get it
           </a>
           <div className="header__content">
             <span className="header__content-link">мальчики</span>
