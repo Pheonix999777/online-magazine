@@ -46,11 +46,15 @@
   margin-left: 35px;
 }
 
+.header__downMenu {
+  position: relative;
+}
+
 .header__menu {
   display: none;
   position: absolute;
   border-radius: 12px;
-  right: calc(50% - 55px);
+  right: -190px;
   z-index: 100;
 }
 
