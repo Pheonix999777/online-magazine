@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/app/Components/Container/Container";
 import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
 import Img2 from "../../../../public/Imiges/image-removebg4.png";
@@ -9,8 +10,18 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
 import "./styles.scss";
+import { useState } from "react";
 
 export default function Categories() {
+  const [openIndex, setOpenIndex] = useState(null);
+  const [data, setData] = useState([
+    { title: "Размеры", text: "не выбрана", label: "Price" },
+    { title: "Цвет", text: "не выбрана", label: "Blue" },
+    { title: "По ценам", text: "не выбрана", label: "Blue" },
+    { title: "Сезонность", text: "не выбрана", label: "Blue" },
+    { title: "Страна", text: "не выбрана", label: "Blue" },
+  ]);
+
   const products = [
     {
       id: 1,
@@ -42,48 +53,69 @@ export default function Categories() {
     },
   ];
 
+  const handleChange = (index) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleOptionClick = (index, label) => {
+    const newData = data.map((item, i) =>
+      i === index ? { ...item, text: label } : item
+    );
+    setData(newData);
+    setOpenIndex(null);
+  };
+
   return (
     <section className="category">
       <Container>
         <div className="category__flex">
           <div className="category__wrapper">
-            <p className="category__words">
-              Размеры:
-              <span className="category__spn">не выбрана</span>
-              <RiArrowDownSLine />
-            </p>
-
-            <p className="category__words">
-              Цвет:
-              <span className="category__spn">не выбрана</span>
-              <RiArrowDownSLine />
-            </p>
-
-            <p className="category__words">
-              По ценам:
-              <span className="category__spn">не выбрана</span>
-              <RiArrowDownSLine />
-            </p>
-
-            <p className="category__words">
-              Сезонность:
-              <span className="category__spn">не выбрана</span>
-              <RiArrowDownSLine />
-            </p>
-
-            <p className="category__words">
-              Сотировать по:
-              <span className="category__spn">не выбрана</span>
-              <RiArrowDownSLine />
-            </p>
+            {data.map((item, index) => (
+              <div key={index} className="category__words">
+                {item.title}:
+                <span
+                  onClick={() => handleChange(index)}
+                  className="category__spn"
+                >
+                  {item.text}
+                  <RiArrowDownSLine
+                    style={{
+                      marginRight: "5px",
+                      color: "#333",
+                      marginLeft: "5px",
+                    }}
+                  />
+                </span>
+                {openIndex === index && (
+                  <ul className="category__selected">
+                    <li className="category__option">
+                      <button
+                        onClick={() => handleOptionClick(index, item.label)}
+                        className="category__option-btn"
+                      >
+                        {item.label}
+                      </button>
+                    </li>
+                    <li className="category__option">
+                      <button
+                        onClick={() => handleOptionClick(index, item.label)}
+                        className="category__option-btn"
+                      >
+                        {item.label}
+                      </button>
+                    </li>
+                  </ul>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="category__flex-box">
-            <p className="category__words">
+            <div className="category__words">
               Страна:
               <span className="category__span">По возрастанию цен</span>
               <RiArrowDownSLine style={{ fill: "#297EFF" }} />
-            </p>
+            </div>
           </div>
         </div>
         <span className="category__select">
@@ -117,8 +149,8 @@ export default function Categories() {
             </li>
           ))}
         </ul>
+
         <div className="category__bottom">
-          {" "}
           <span className="category__select">
             Новые колекции <MdOutlineKeyboardArrowRight />
           </span>

@@ -70,7 +70,22 @@
   align-items: center;
   gap: 10px;
   margin-top: 15px;
+  transition: 0.3s;
+  outline: none;
   cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background: $orange;
+    border: 2px solid $orange;
+    fill: $light;
+    color: $light;
+    stroke-width: 0;
+  }
+
+  &:hover path {
+    fill: $light;
+    stroke: $light;
+  }
 }
 
 .product__bottom {

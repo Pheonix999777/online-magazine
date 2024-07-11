@@ -19,6 +19,7 @@
 }
 
 .category__words {
+  position: relative;
   display: inline-flex;
   align-items: center;
   color: $text-color;
@@ -28,6 +29,8 @@
 }
 
 .category__spn {
+  display: inline-flex;
+  align-items: center;
   color: $primary;
   font-size: 14px;
   line-height: 108.5%;
@@ -42,6 +45,41 @@
   margin-left: 5px;
   margin-right: 5px;
   margin-left: 20px;
+}
+
+.category__selected {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  border-radius: 10px;
+  background-color: $light;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  z-index: 10;
+}
+
+.category__change {
+  display: none;
+}
+
+.category__option {
+  &:not(:first-child) {
+    margin-top: 10px;
+  }
+}
+
+.category__option-btn {
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: none;
+  padding: 10px;
+  &:hover {
+    background-color: $bg-color;
+  }
 }
 
 .category__words svg {
@@ -132,6 +170,19 @@
   gap: 10px;
   margin-top: 15px;
   cursor: pointer;
+  transition: 0.3s;
+  &:hover {
+    background: $orange;
+    border: 2px solid $orange;
+    fill: $light;
+    color: $light;
+    stroke-width: 0;
+  }
+
+  &:hover path {
+    fill: $light;
+    stroke: $light;
+  }
 }
 
 .category__bottom {

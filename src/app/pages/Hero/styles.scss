@@ -11,6 +11,13 @@
   height: 490px;
 }
 
+.hero__main {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 70px;
+}
+
 .hero__wrapper {
   max-width: 600px;
   margin-top: 91px;
@@ -29,6 +36,7 @@
   margin-top: 11px;
 }
 
+// hover button styles
 .hero__btn {
   margin-top: 24px;
   color: $black-color;
@@ -39,7 +47,34 @@
   background-color: transparent;
   line-height: 108.5%;
   display: inline-flex;
+  align-items: center;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero__btn-icon {
+  display: inline-flex;
+  margin-right: 8px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hero__btn-new-icon {
+  display: inline-flex;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  margin-right: 8px;
+}
+
+.hero__btn:hover .hero__btn-icon {
+  transform: translateX(250%);
+  opacity: 0;
+}
+
+.hero__btn:hover .hero__btn-new-icon {
+  transform: translateX(170%);
 }
 
 // carousel
@@ -50,8 +85,8 @@
 
 .swiper-slide {
   display: flex;
-  width: 85%;
-  padding-left: 70px;
+  width: 100%;
+
   justify-content: space-between;
   font-size: 18px;
   background: #efe9e9;
@@ -66,7 +101,7 @@
 
 .hero__img {
   position: absolute;
-  right: calc(15%);
+  right: calc(23%);
   top: calc(50%);
 }
 

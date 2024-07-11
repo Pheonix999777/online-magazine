@@ -6,7 +6,8 @@ import Img from "../../../../public/Imiges/image-removebg-preview (27) 1.png";
 import Img2 from "../../../../public/Imiges/image-removebg-preview (33) 1.png";
 import Img3 from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
 import Img4 from "../../../../public/Imiges/image-removebg-preview (27) 1 (2).png";
-import { FaAngleDoubleRight } from "react-icons/fa";
+import DubbleRight from "../../../../public/icons/dubble-right.svg";
+import { AiFillCheckSquare } from "react-icons/ai";
 
 export default function Clothes() {
   return (
@@ -21,18 +22,27 @@ export default function Clothes() {
               </h2>
               <span className="clothes__price">от 60 000 uzs</span>
               <div className="clothes__link-box">
-                <Link className="clothes__link" href={"#"}>
-                  <FaAngleDoubleRight
-                    style={{ fontSize: "10px", marginRight: "3px" }}
-                    width={16}
-                    hanging={16}
-                  />
+                <Link href={"#"} className="clothes__btn">
+                  <span className="clothes__btn-icon">
+                    <DubbleRight />
+                  </span>
+                  <span className="clothes__btn-new-icon">
+                    <AiFillCheckSquare />
+                  </span>
                   Подробнее
                 </Link>
               </div>
             </div>
-            <Image src={Img} alt="" width={294} height={386} />
+
+            <Image
+              className="clothes__img"
+              src={Img}
+              alt=""
+              width={294}
+              height={386}
+            />
           </div>
+
           <div className="clothes__boxes">
             <div className="clothes__product">
               <div className="clothes__product-div">
@@ -40,18 +50,27 @@ export default function Clothes() {
                 <h3 className="clothes__subname">Одежды для мальчиков</h3>
                 <span className="clothes__price-text">от 60 000 uzs</span>
                 <div className="clothes__product-wrapper">
-                  <Link className="clothes__link" href={"#"}>
-                    <FaAngleDoubleRight
-                      style={{ fontSize: "10px", marginRight: "3px" }}
-                      width={16}
-                      hanging={16}
-                    />
+                  <Link href={"#"} className="clothes__btn">
+                    <span className="clothes__btn-icon">
+                      <DubbleRight />
+                    </span>
+                    <span className="clothes__btn-new-icon">
+                      <AiFillCheckSquare />
+                    </span>
                     Подробнее
                   </Link>
                 </div>
               </div>
-              <Image src={Img2} alt="" width={268} height={268} />
+
+              <Image
+                className="clothes__img"
+                src={Img2}
+                alt=""
+                width={268}
+                height={268}
+              />
             </div>
+
             <div className="clothes__product-box">
               <div className="clothes__product-bottom">
                 <div className="clothes__product-text">
@@ -59,17 +78,25 @@ export default function Clothes() {
                   <h3 className="clothes__subname">Одежды для мальчиков</h3>
                   <span className="clothes__price-text">от 60 000 uzs</span>
                   <div className="clothes__product-wrapper">
-                    <Link className="clothes__link" href={"#"}>
-                      <FaAngleDoubleRight
-                        style={{ fontSize: "10px", marginRight: "3px" }}
-                        width={16}
-                        hanging={16}
-                      />
+                    <Link href={"#"} className="clothes__btn">
+                      <span className="clothes__btn-icon">
+                        <DubbleRight />
+                      </span>
+                      <span className="clothes__btn-new-icon">
+                        <AiFillCheckSquare />
+                      </span>
                       Подробнее
                     </Link>
                   </div>
                 </div>
-                <Image src={Img3} alt="" width={151} height={151} />
+
+                <Image
+                  className="clothes__img"
+                  src={Img3}
+                  alt=""
+                  width={151}
+                  height={151}
+                />
               </div>
 
               <div className="clothes__product-bottom">
@@ -78,17 +105,25 @@ export default function Clothes() {
                   <h3 className="clothes__subname">Одежды для мальчиков</h3>
                   <span className="clothes__price-text">от 60 000 uzs</span>
                   <div className="clothes__product-wrapper">
-                    <Link className="clothes__link" href={"#"}>
-                      <FaAngleDoubleRight
-                        style={{ fontSize: "10px", marginRight: "3px" }}
-                        width={16}
-                        hanging={16}
-                      />
+                    <Link href={"#"} className="clothes__btn">
+                      <span className="clothes__btn-icon">
+                        <DubbleRight />
+                      </span>
+                      <span className="clothes__btn-new-icon">
+                        <AiFillCheckSquare />
+                      </span>
                       Подробнее
                     </Link>
                   </div>
                 </div>
-                <Image src={Img4} alt="" width={151} height={151} />
+
+                <Image
+                  className="clothes__img"
+                  src={Img4}
+                  alt=""
+                  width={151}
+                  height={151}
+                />
               </div>
             </div>
           </div>

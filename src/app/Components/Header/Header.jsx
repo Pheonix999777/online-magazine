@@ -8,8 +8,11 @@ import Heart from "../../../../public/icons/heart.svg";
 import Analiytics from "../../../../public/icons/analiytics.svg";
 import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
+import { useState } from "react";
 
 export default function Header() {
+  const [isInputVisible, setIsInputVisible] = useState(false);
+
   const navbar = [
     { href: "/about", label: "О магазине" },
     { href: "/delivery-payment", label: "Доставка и оплата" },
@@ -24,6 +27,10 @@ export default function Header() {
     { label: "девочки" },
     { label: "младенцы" },
   ];
+
+  const handleSearchClick = () => {
+    setIsInputVisible(!isInputVisible);
+  };
 
   return (
     <header className="header">
@@ -59,21 +66,84 @@ export default function Header() {
                           брюки
                         </Link>
                       </li>
-                      <li className="header__menu-list">обуви</li>
-                      <li className="header__menu-list">шапки</li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          обуви
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          шапки
+                        </Link>
+                      </li>
                     </ul>
 
                     <ul className="header__menu-ul">
-                      <li className="header__menu-list">финки</li>
-                      <li className="header__menu-list">женщины</li>
-                      <li className="header__menu-list">куртки</li>
-                      <li className="header__menu-list">футболки</li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          финки
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          женщины
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          куртки
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          футболки
+                        </Link>
+                      </li>
                     </ul>
 
                     <ul className="header__menu-ul">
-                      <li className="header__menu-list">шорты</li>
-                      <li className="header__menu-list">свитеры</li>
-                      <li className="header__menu-list">аккесуары</li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          шорты
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          свитеры
+                        </Link>
+                      </li>
+                      <li className="header__menu-list">
+                        <Link
+                          className="header__menu-link"
+                          href={"/pages/categories"}
+                        >
+                          аккесуары
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -87,21 +157,40 @@ export default function Header() {
           </div>
 
           <div className="header__bottom-right">
-            <button className="header__actions">
-              <Search />
-            </button>
+            <div
+              className={
+                isInputVisible
+                  ? "header__actions-visible"
+                  : "header__actions-container"
+              }
+            >
+              <button className="header__actions" onClick={handleSearchClick}>
+                <Search />
+              </button>
+              <div
+                className={`header__input-container ${
+                  isInputVisible ? "visible" : ""
+                }`}
+              >
+                <input
+                  type="text"
+                  className="header__input"
+                  placeholder="Название одежды"
+                />
+              </div>
+            </div>
 
-            <Link className="header__actions" href={"#"}>
+            <Link className="header__actions" href={"/pages/error"}>
               <Heart />
               <span className="header__actions-number">0</span>
             </Link>
 
-            <Link className="header__actions" href={"#"}>
+            <Link className="header__actions" href={"/pages/error"}>
               <Analiytics />
               <span className="header__actions-number">0</span>
             </Link>
 
-            <Link className="header__actions" href={"#"}>
+            <Link className="header__actions" href={"/pages/error"}>
               <Bag />
               <span className="header__actions-number">0</span>
             </Link>

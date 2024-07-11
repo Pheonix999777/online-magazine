@@ -77,25 +77,30 @@ export default function Product() {
         </ul>
 
         <div className="product__bottom">
-          {" "}
           <span className="product__select">
             Новые колекции <MdOutlineKeyboardArrowRight />
           </span>
           <ul className="product__ul">
             {products.map((item, index) => (
               <li key={index} className="product__list">
-                <div className="product__box">
-                  <Image
-                    className="product__box-img"
-                    src={item.img}
-                    alt=""
-                    width={252}
-                    height={252}
-                  />
-                </div>
-                <span className="product__text">New</span>
-                <h3 className="product__title">{item.title}</h3>
-                <span className="product__price"> {item.price}</span>
+                <Link
+                  className="product__link"
+                  href={`/pages/categories/${item.id}`}
+                >
+                  <div className="product__box">
+                    <Image
+                      className="product__box-img"
+                      src={item.img}
+                      alt=""
+                      width={252}
+                      height={252}
+                    />
+                  </div>
+                  <span className="product__text">New</span>
+                  <h3 className="product__title">{item.title}</h3>
+                  <span className="product__price"> {item.price}</span>
+                </Link>
+
                 <button className="product__card">
                   <Shopping />
                   добавить в корзину

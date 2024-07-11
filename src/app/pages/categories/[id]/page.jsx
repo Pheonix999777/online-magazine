@@ -13,6 +13,7 @@ import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
 import Shopping from "../../../../../public/icons/shoppingbag.svg";
 import Zoom from "@/app/Components/ImageInnerZoom/ImageInnerZoom";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const Detail = () => {
   const params = useParams();
@@ -56,7 +57,14 @@ const Detail = () => {
   ];
 
   const tabs = [
-    { name: "Описание", content: " Вес ковра" },
+    {
+      name: "Описание",
+      content: " Вес ковра",
+      text: "Высота ворса (мм.)",
+      label: "Плотность по основе",
+      word: "Плотность по утку",
+      new: "плотность ворса",
+    },
     { name: "Наличие", content: " Высота ворса (мм.)" },
     { name: "Доставка и оплата", content: " Плотность по основе" },
   ];
@@ -217,12 +225,58 @@ const Detail = () => {
             </ul>
           </div>
           <div className="item__tabs-box">
-            <div key={activeTab}>
-              <p>{tabs[activeTab].content}</p>
-            </div>
+            <ul className="item__content" key={activeTab}>
+              <li>
+                <span className="item__content-text">
+                  {tabs[activeTab].content}
+                </span>
+                <span className="item__content-text">
+                  {tabs[activeTab].label}
+                </span>
+                <span className="item__content-text">
+                  {tabs[activeTab].name}
+                </span>
+                <span className="item__content-text">
+                  {tabs[activeTab].new}
+                </span>
+                <span className="item__content-text">
+                  {tabs[activeTab].text}
+                </span>
+                <span className="item__content-text">
+                  {tabs[activeTab].word}
+                </span>
+              </li>
+              <li>
+                <span className="item__content-text">2,35 кг/м2</span>
+                <span className="item__content-text">12</span>
+                <span className="item__content-text">40</span>
+                <span className="item__content-text">44</span>
+                <span className="item__content-text">
+                  352 000 точек на 1 м2
+                </span>
+                <span className="item__content-text">SAG. Узбекистан</span>
+              </li>
+              <li>
+                <span className="item__content-text">Стиль</span>
+                <span className="item__content-text">Стиль</span>
+                <span className="item__content-text">Коллекция</span>
+                <span className="item__content-text">Материал дорса</span>
+                <span className="item__content-text">Форма</span>
+              </li>
+              <li>
+                <span className="item__content-text">Современный</span>
+                <span className="item__content-text">серый / голубой</span>
+                <span className="item__content-text">Prada</span>
+                <span className="item__content-text">100% Полипропилен</span>
+                <span className="item__content-text">Прямоугольный</span>
+              </li>
+            </ul>
           </div>
         </div>
 
+        <span className="category__select">
+          Новые колекции <MdOutlineKeyboardArrowRight />
+        </span>
         <ul className="category__ul">
           {products.map((item, index) => (
             <li key={index} className="category__list">

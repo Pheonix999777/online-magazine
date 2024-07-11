@@ -11,6 +11,7 @@ import "swiper/css/pagination";
 import "./styles.scss";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import Photo from "../../../../public/Imiges/photo.png";
+import { AiFillCheckSquare } from "react-icons/ai";
 
 const Hero = () => {
   const images = [
@@ -39,34 +40,43 @@ const Hero = () => {
   return (
     <section className="hero">
       <Container>
-        <div className="hero__div">
-          <div className="hero__box">
-            <Swiper
-              direction={"vertical"}
-              pagination={{
-                clickable: true,
-              }}
-              modules={[Pagination]}
-              className="mySwiper"
-            >
-              {images.map((image, index) => (
-                <SwiperSlide key={index}>
+        <div className="hero__box">
+          <Swiper
+            direction={"vertical"}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="mySwiper"
+          >
+            {images.map((image, index) => (
+              <SwiperSlide key={index}>
+                <div className="hero__main">
                   <div className="hero__wrapper">
                     <h1 className="hero__title">{image.title}</h1>
                     <p className="hero__text">{image.text}</p>
                     <button className="hero__btn">
-                      <DubbleRight />
+                      <span className="hero__btn-icon">
+                        <DubbleRight />
+                      </span>
+                      <span className="hero__btn-new-icon">
+                        <AiFillCheckSquare />
+                      </span>
                       Подробнее
                     </button>
                   </div>
                   <div className="hero__img-box">
-                    <Image className="hero__first-img" src={image.img} alt={image.title} />
+                    <Image
+                      className="hero__first-img"
+                      src={image.img}
+                      alt={image.title}
+                    />
                     <Image className="hero__img" src={Photo} alt="" />
                   </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </Container>
     </section>
