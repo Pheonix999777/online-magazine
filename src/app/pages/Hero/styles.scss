@@ -3,13 +3,12 @@
 }
 
 .hero__div {
-  background: $bg-color;
+  background: #efe9e9;
 }
 
 .hero__box {
   width: 100%;
   height: 490px;
-  background: $bg-color;
 }
 
 .hero__wrapper {
@@ -37,7 +36,7 @@
   padding: 13px 23px;
   border: 1px solid $black-color;
   font-size: 14px;
-  font-weight: 500;
+  background-color: transparent;
   line-height: 108.5%;
   display: inline-flex;
   cursor: pointer;
@@ -51,17 +50,24 @@
 
 .swiper-slide {
   display: flex;
-  width: 90%;
+  width: 85%;
   padding-left: 70px;
   justify-content: space-between;
   font-size: 18px;
-  background: $bg-color;
+  background: #efe9e9;
 }
 
-.swiper-slide img {
+.swiper-slide .hero__first-img {
+  position: relative;
   width: 380px;
   height: 480px;
   margin-top: 8px;
+}
+
+.hero__img {
+  position: absolute;
+  right: calc(15%);
+  top: calc(50%);
 }
 
 .swiper-pagination {

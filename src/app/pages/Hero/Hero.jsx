@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "./styles.scss";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
+import Photo from "../../../../public/Imiges/photo.png";
 
 const Hero = () => {
   const images = [
@@ -58,8 +59,9 @@ const Hero = () => {
                       Подробнее
                     </button>
                   </div>
-                  <div className="slide">
-                    <Image src={image.img} alt={image.title} />
+                  <div className="hero__img-box">
+                    <Image className="hero__first-img" src={image.img} alt={image.title} />
+                    <Image className="hero__img" src={Photo} alt="" />
                   </div>
                 </SwiperSlide>
               ))}

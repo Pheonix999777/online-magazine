@@ -20,9 +20,9 @@ export default function Header() {
   ];
 
   const category = [
-    { href: "/about", label: "мальчики" },
-    { href: "/delivery-payment", label: "девочки" },
-    { href: "/pages/categories", label: "младенцы" },
+    { label: "мальчики" },
+    { label: "девочки" },
+    { label: "младенцы" },
   ];
 
   return (
