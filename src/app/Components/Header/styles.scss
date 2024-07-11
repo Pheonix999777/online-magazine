@@ -39,28 +39,11 @@
   max-width: 520px;
   display: inline-flex;
   align-items: center;
+  gap: 10px;
   border-radius: 100px;
   border: 1px solid #eee;
   padding: 4px 4px 4px 24px;
   margin-left: 35px;
-}
-
-.header__content-link {
-  display: block;
-  position: relative;
-  color: $text-color;
-  font-size: 14px;
-  padding: 11px 16px;
-  text-decoration: none;
-  &:hover .header__menu {
-    display: flex;
-    border-radius: 40px;
-    background: $bg-color;
-  }
-}
-
-.header__content-link:not(:first-child) {
-  margin-left: 10px;
 }
 
 .header__menu {
@@ -85,6 +68,7 @@
   cursor: pointer;
   padding: 11px 16px;
   font-size: 14px;
+  font-weight: 600;
   color: $text-color;
   &:hover {
     border-radius: 40px;

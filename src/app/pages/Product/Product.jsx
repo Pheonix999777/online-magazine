@@ -56,7 +56,13 @@ export default function Product() {
                 href={`/pages/categories/${item.id}`}
               >
                 <div className="product__box">
-                  <Image src={item.img} alt="" width={252} height={252} />
+                  <Image
+                    className="product__box-img"
+                    src={item.img}
+                    alt=""
+                    width={252}
+                    height={252}
+                  />
                 </div>
                 <span className="product__text">New</span>
                 <h3 className="product__title">{item.title}</h3>
@@ -79,7 +85,13 @@ export default function Product() {
             {products.map((item, index) => (
               <li key={index} className="product__list">
                 <div className="product__box">
-                  <Image src={item.img} alt="" width={252} height={252} />
+                  <Image
+                    className="product__box-img"
+                    src={item.img}
+                    alt=""
+                    width={252}
+                    height={252}
+                  />
                 </div>
                 <span className="product__text">New</span>
                 <h3 className="product__title">{item.title}</h3>

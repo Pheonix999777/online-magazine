@@ -45,9 +45,9 @@ export default function Header() {
             Get it
           </a>
           <div className="header__content">
-            <span className="header__content-link">мальчики</span>
+            <button className="header__downBtn">мальчики</button>
 
-            <span className="header__content-link">девочки</span>
+            <button className="header__downBtn">девочки</button>
 
             <div className="header__downMenu">
               <button className="header__downBtn">младенцы</button>

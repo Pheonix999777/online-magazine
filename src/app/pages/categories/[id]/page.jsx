@@ -12,7 +12,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
 import Shopping from "../../../../../public/icons/shoppingbag.svg";
-import ImageMagnifier from "@/app/Components/ImageMagnifer/ImageMagnifer";
+import Zoom from "@/app/Components/ImageInnerZoom/ImageInnerZoom";
 
 const Detail = () => {
   const params = useParams();
@@ -70,6 +70,7 @@ const Detail = () => {
     setActiveProduct(image);
     setActiveImage(true);
   };
+
   return (
     <section className="item">
       <Container>
@@ -120,9 +121,9 @@ const Detail = () => {
 
           <div className="item__block">
             {activeImage ? (
-              <ImageMagnifier src={activeProduct} />
+              <Zoom src={activeProduct.src} alt="Active product image" />
             ) : (
-              <ImageMagnifier src={product.img} />
+              <Zoom src={product.img.src} alt="Product image" />
             )}
           </div>
 
@@ -231,6 +232,7 @@ const Detail = () => {
               >
                 <div className="category__box">
                   <Image
+                    className="category__box-img"
                     src={item.img}
                     alt="Блузка для девочки"
                     width={252}

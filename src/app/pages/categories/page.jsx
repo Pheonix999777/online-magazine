@@ -1,6 +1,4 @@
-"use client";
 import Container from "@/app/Components/Container/Container";
-import "./styles.scss";
 import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
 import Img2 from "../../../../public/Imiges/image-removebg4.png";
 import Img3 from "../../../../public/Imiges/image-removebg1.png";
@@ -8,24 +6,11 @@ import Img4 from "../../../../public/Imiges/image-removebg2.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import { RiArrowDownSLine } from "react-icons/ri";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
+import "./styles.scss";
 
 export default function Categories() {
-  const [isSticky, setSticky] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setSticky(window.scrollY > 100);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   const products = [
     {
       id: 1,
@@ -60,12 +45,8 @@ export default function Categories() {
   return (
     <section className="category">
       <Container>
-        <div className={`category__flex ${isSticky ? "category__sticky" : ""}`}>
-          <div
-            className={
-              isSticky ? "category__wrapper--sticky" : "category__wrapper"
-            }
-          >
+        <div className="category__flex">
+          <div className="category__wrapper">
             <p className="category__words">
               Размеры:
               <span className="category__spn">не выбрана</span>
@@ -117,6 +98,7 @@ export default function Categories() {
               >
                 <div className="category__box">
                   <Image
+                    className="category__box-img"
                     src={item.img}
                     alt="Блузка для девочки"
                     width={252}
@@ -149,6 +131,7 @@ export default function Categories() {
                 >
                   <div className="category__box">
                     <Image
+                      className="category__box-img"
                       src={item.img}
                       alt="Блузка для девочки"
                       width={252}
