@@ -27,9 +27,9 @@
 
 .clothes__title {
   color: $font-color;
-  font-weight: 500;
   font-size: 32px;
   margin-bottom: 14px;
+  font-weight: 500;
 }
 
 .clothes__price {
@@ -44,7 +44,6 @@
 .clothes__link {
   color: #121212;
   font-size: 14px;
-  font-weight: 500;
   line-height: 108.5%;
   text-decoration: none;
   display: inline-flex;
@@ -60,6 +59,7 @@
   align-items: center;
   justify-content: space-between;
   background: $bg-color;
+  font-weight: 500;
   padding: 14px 42px 0 42px;
 }
 
