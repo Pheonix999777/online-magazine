@@ -7,7 +7,6 @@ import Img2 from "../../../../public/Imiges/image-removebg-preview (33) 1.png";
 import Img3 from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
 import Img4 from "../../../../public/Imiges/image-removebg-preview (27) 1 (2).png";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
-import { AiFillCheckSquare } from "react-icons/ai";
 
 export default function Clothes() {
   return (
@@ -27,7 +26,7 @@ export default function Clothes() {
                     <DubbleRight />
                   </span>
                   <span className="clothes__btn-new-icon">
-                    <AiFillCheckSquare />
+                    <DubbleRight />
                   </span>
                   Подробнее
                 </Link>
@@ -55,7 +54,7 @@ export default function Clothes() {
                       <DubbleRight />
                     </span>
                     <span className="clothes__btn-new-icon">
-                      <AiFillCheckSquare />
+                      <DubbleRight />
                     </span>
                     Подробнее
                   </Link>
@@ -83,7 +82,7 @@ export default function Clothes() {
                         <DubbleRight />
                       </span>
                       <span className="clothes__btn-new-icon">
-                        <AiFillCheckSquare />
+                        <DubbleRight />
                       </span>
                       Подробнее
                     </Link>
@@ -110,7 +109,7 @@ export default function Clothes() {
                         <DubbleRight />
                       </span>
                       <span className="clothes__btn-new-icon">
-                        <AiFillCheckSquare />
+                        <DubbleRight />
                       </span>
                       Подробнее
                     </Link>

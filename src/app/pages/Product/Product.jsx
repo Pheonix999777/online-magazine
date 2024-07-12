@@ -1,3 +1,4 @@
+"use client";
 import Container from "@/app/Components/Container/Container";
 import "./styles.scss";
 import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
@@ -8,6 +9,10 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
 import Link from "next/link";
+import Heart from "../../../../public/icons/heart.svg";
+import { useDispatch } from "react-redux";
+import { addCart } from "@/app/store/Slices/Cart.Slices";
+import { addToCart } from "@/app/store/Slices/Add.Slices";
 
 export default function Product() {
   const products = [
@@ -41,6 +46,26 @@ export default function Product() {
     },
   ];
 
+  const dispatch = useDispatch();
+
+  const handleAddLike = (productId) => {
+    dispatch(
+      addToCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
+
+  const handleAddCart = (productId) => {
+    dispatch(
+      addCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
+
   return (
     <section className="product">
       <Container>
@@ -68,7 +93,17 @@ export default function Product() {
                 <h3 className="product__title">{item.title}</h3>
                 <span className="product__price"> {item.price}</span>
               </Link>
-              <button className="product__card">
+
+              <div
+                className="product__like"
+                onClick={() => handleAddLike(item.id)}
+              >
+                <Heart />
+              </div>
+              <button
+                className="product__card"
+                onClick={() => handleAddCart(item.id)}
+              >
                 <Shopping />
                 добавить в корзину
               </button>
@@ -101,7 +136,17 @@ export default function Product() {
                   <span className="product__price"> {item.price}</span>
                 </Link>
 
-                <button className="product__card">
+                <div
+                  className="product__like"
+                  onClick={() => handleAddLike(item.id)}
+                >
+                  <Heart />
+                </div>
+
+                <button
+                  className="product__card"
+                  onClick={() => handleAddCart(item.id)}
+                >
                   <Shopping />
                   добавить в корзину
                 </button>

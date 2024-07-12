@@ -69,19 +69,19 @@ export default function Clients() {
     },
   ];
   return (
-    <section className="clents">
+    <section className="clients">
       <Container>
-       <div className="clents__container"> 
-       <span className="clents__title">Что говорят наши клиенты</span>
+       <div className="clients__container"> 
+       <span className="clients__title">Что говорят наши клиенты</span>
        </div>
-        <div className="clents__main">
+        <div className="clients__main">
           <Marquee pauseOnClick>
             {clients.map((client, index) => (
-              <div key={index} className="clents__wrapper">
-                <p className="clents__text">{client.text}</p>
-                <div className="clents__box">
+              <div key={index} className="clients__wrapper">
+                <p className="clients__text">{client.text}</p>
+                <div className="clients__box">
                   <Image src={client.img} alt="Wade Warren" />
-                  <div className="clents__content">
+                  <div className="clients__content">
                     <span> {client.name}</span>
                     <p> {client.model}</p>
                   </div>

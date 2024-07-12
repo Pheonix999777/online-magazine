@@ -24,7 +24,7 @@
   @include bg-color;
   border: 1px solid $bg-color;
   transition: 0.3s;
-  &:hover {
+  &:active {
     border: 1px solid $orange;
   }
 }
@@ -242,7 +242,7 @@
   gap: 10px;
   margin-top: 15px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.2s;
   &:hover {
     background: $orange;
     border: 2px solid $orange;

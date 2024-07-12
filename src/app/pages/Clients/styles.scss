@@ -1,38 +1,40 @@
-.clents {
+.clients {
   padding-top: 50px;
   padding-bottom: 181px;
 }
 
-.clents .container {
+.clients .container {
   max-width: 1500px;
 }
 
-.clents__container {
+.clients__container {
   max-width: 1380px;
   padding: 0 20px;
   margin: 0 auto;
 }
 
-.clents__main {
+.clients__main {
   margin-left: -20px;
+  background: #fff;
+  box-shadow: 14px 11px 134px 0px rgba(60, 68, 99, 0.05);
 }
 
-.clents__title {
+.clients__title {
   display: block;
   color: $black-color;
   font-size: 24px;
   margin-bottom: 28px;
 }
 
-.clents__wrapper {
-  background: $light;
+.clients__wrapper {
+  background: #fff;
   box-shadow: 14px 11px 134px 0px rgba(60, 68, 99, 0.05);
   padding: 57px 52px 44px 52px;
-  margin: 20px 0;
+
   margin-left: 20px;
 }
 
-.clents__text {
+.clients__text {
   max-width: 250px;
   color: #5b5b5b;
   font-size: 18px;
@@ -40,23 +42,23 @@
   line-height: 158%;
 }
 
-.clents__box {
+.clients__box {
   display: inline-flex;
   align-items: center;
   margin-top: 28px;
 }
 
-.clents__content {
+.clients__content {
   margin-left: 12px;
 }
 
-.clents__content span {
+.clients__content span {
   color: #1f1814;
   font-size: 16px;
   line-height: 158%;
 }
 
-.clents__content p {
+.clients__content p {
   color: #1f1814;
   font-size: 14px;
   font-style: italic;

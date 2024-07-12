@@ -11,7 +11,6 @@ import "swiper/css/pagination";
 import "./styles.scss";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import Photo from "../../../../public/Imiges/photo.png";
-import { AiFillCheckSquare } from "react-icons/ai";
 
 const Hero = () => {
   const images = [
@@ -60,7 +59,7 @@ const Hero = () => {
                         <DubbleRight />
                       </span>
                       <span className="hero__btn-new-icon">
-                        <AiFillCheckSquare />
+                        <DubbleRight />
                       </span>
                       Подробнее
                     </button>

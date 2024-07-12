@@ -8,18 +8,23 @@ import Heart from "../../../../public/icons/heart.svg";
 import Analiytics from "../../../../public/icons/analiytics.svg";
 import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
 export default function Header() {
   const [isInputVisible, setIsInputVisible] = useState(false);
+  const [isSticky, setSticky] = useState(false);
+
+  const LikeCarts = useSelector((state) => state.cart.item);
+  const cart = useSelector((state) => state.add.item);
 
   const navbar = [
-    { href: "/about", label: "О магазине" },
-    { href: "/delivery-payment", label: "Доставка и оплата" },
-    { href: "/security-policy", label: "Политика безопасности" },
-    { href: "/terms-agreement", label: "Условия соглашения" },
-    { href: "/public-offer", label: "Публичная оферта" },
-    { href: "/public-offer", label: "Наши гарантии" },
+    { href: "/pages/NotFound", label: "О магазине" },
+    { href: "/pages/NotFound", label: "Доставка и оплата" },
+    { href: "/pages/NotFound", label: "Политика безопасности" },
+    { href: "/pages/NotFound", label: "Условия соглашения" },
+    { href: "/pages/NotFound", label: "Публичная оферта" },
+    { href: "/pages/NotFound", label: "Наши гарантии" },
   ];
 
   const category = [
@@ -27,6 +32,17 @@ export default function Header() {
     { label: "девочки" },
     { label: "младенцы" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setSticky(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const handleSearchClick = () => {
     setIsInputVisible(!isInputVisible);
@@ -47,7 +63,11 @@ export default function Header() {
           </ul>
         </nav>
 
-        <div className="header__bottom">
+        <div
+          className={`header__bottom ${
+            isSticky ? "header__bottom-sticky" : ""
+          }`}
+        >
           <a className="header__logo" href="/">
             Get it
           </a>
@@ -150,10 +170,10 @@ export default function Header() {
               </div>
             ))}
 
-            <button className="header__category">
+            <Link href={"/pages/categories"} className="header__category">
               <CgMenuGridO style={{ marginRight: "2px" }} />
               все категории
-            </button>
+            </Link>
           </div>
 
           <div className="header__bottom-right">
@@ -180,19 +200,19 @@ export default function Header() {
               </div>
             </div>
 
-            <Link className="header__actions" href={"/pages/error"}>
+            <Link className="header__actions" href={"/pages/LikeCarts"}>
               <Heart />
-              <span className="header__actions-number">0</span>
+              <span className="header__actions-number">{LikeCarts.length}</span>
             </Link>
 
-            <Link className="header__actions" href={"/pages/error"}>
+            <Link className="header__actions" href={"/pages/NotFound"}>
               <Analiytics />
               <span className="header__actions-number">0</span>
             </Link>
 
-            <Link className="header__actions" href={"/pages/error"}>
+            <Link className="header__actions" href={"/pages/bag"}>
               <Bag />
-              <span className="header__actions-number">0</span>
+              <span className="header__actions-number">{cart.length}</span>
             </Link>
 
             <button className="header__login">
