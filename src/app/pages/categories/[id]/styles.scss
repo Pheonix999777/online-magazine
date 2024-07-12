@@ -23,10 +23,6 @@
   padding: 25px 16px;
   @include bg-color;
   border: 1px solid $bg-color;
-  transition: 0.3s;
-  &:active {
-    border: 1px solid $orange;
-  }
 }
 
 .item__main-flex {
@@ -79,6 +75,13 @@
   padding: 11px 12px;
   font-size: 14px;
   background: $bg-color;
+  border-radius: 3px;
+  border: 1px solid $bg-color;
+  cursor: pointer;
+}
+
+.item__number.active {
+  border: 1px solid $orange;
 }
 
 .item__number:not(:first-child) {

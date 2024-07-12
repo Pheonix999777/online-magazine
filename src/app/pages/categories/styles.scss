@@ -7,6 +7,12 @@
   margin-bottom: 34px;
 }
 
+.category__flex-sticky {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+}
+
 .category__wrapper {
   display: inline-flex;
   gap: 24px;

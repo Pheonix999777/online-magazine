@@ -33,6 +33,7 @@
   top: 0;
   z-index: 100;
   padding: 15px 0;
+  background-color: $light;
   width: 100%;
   max-width: 1340px;
 }
@@ -128,7 +129,8 @@
 }
 
 .header__bottom-right {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
@@ -138,10 +140,18 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  &:not(:first-child) {
+    margin-left: 40px;
+  }
+
+  &:nth-child(2) {
+    margin-left: 20px;
+  }
 }
 
-.header__actions:not(:first-child) {
-  margin-left: 40px;
+.header__search {
+  @include style-btn;
+  padding-right: 19px;
 }
 
 .header__actions-number {
@@ -169,9 +179,9 @@
   align-items: center;
   flex-direction: row-reverse;
   border: 1px solid #eee;
-  background: #f5f5f5;
+  background: $bg-color;
   border-radius: 100px;
-  padding: 10px 20px 10px 20px;
+  padding: 10px 0 10px 20px;
 }
 
 .header__input-container {
@@ -181,8 +191,8 @@
 }
 
 .header__input-container.visible {
-  width: 200px;
-  padding-right: 10px;
+  width: 100%;
+  max-width: 200px;
 }
 
 .header__input {

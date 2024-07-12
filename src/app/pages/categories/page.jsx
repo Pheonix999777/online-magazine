@@ -14,6 +14,9 @@ import { useState } from "react";
 
 export default function Categories() {
   const [openIndex, setOpenIndex] = useState(null);
+
+  const [isSticky, setSticky] = useState(false);
+
   const [data, setData] = useState([
     { title: "Размеры", text: "не выбрана", label: "Price" },
     { title: "Цвет", text: "не выбрана", label: "Blue" },
@@ -65,10 +68,24 @@ export default function Categories() {
     setOpenIndex(null);
   };
 
+  const changeBaground = () => {
+    if (window.scrollY >= 490) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBaground);
+
   return (
     <section className="category">
       <Container>
-        <div className="category__flex">
+        <div
+          className={`category__flex ${
+            isSticky ? "category__flex-sticky" : ""
+          }`}
+        >
           <div className="category__wrapper">
             {data.map((item, index) => (
               <div key={index} className="category__words">

@@ -8,7 +8,7 @@ import Heart from "../../../../public/icons/heart.svg";
 import Analiytics from "../../../../public/icons/analiytics.svg";
 import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Header() {
@@ -33,20 +33,19 @@ export default function Header() {
     { label: "младенцы" },
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setSticky(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const changeBaground = () => {
+    if (window.scrollY >= 110) {
+      setSticky(true);
+    } else {
+      setSticky(false);
+    }
+  };
 
   const handleSearchClick = () => {
     setIsInputVisible(!isInputVisible);
   };
+
+  window.addEventListener("scroll", changeBaground);
 
   return (
     <header className="header">
@@ -66,7 +65,7 @@ export default function Header() {
         <div
           className={`header__bottom ${
             isSticky ? "header__bottom-sticky" : ""
-          }`}
+          } `}
         >
           <a className="header__logo" href="/">
             Get it
@@ -184,7 +183,7 @@ export default function Header() {
                   : "header__actions-container"
               }
             >
-              <button className="header__actions" onClick={handleSearchClick}>
+              <button className="header__search" onClick={handleSearchClick}>
                 <Search />
               </button>
               <div

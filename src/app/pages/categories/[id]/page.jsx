@@ -21,6 +21,8 @@ const Detail = () => {
 
   const [activeTab, setActiveTab] = useState(0);
 
+  const [active, setActive] = useState();
+
   const products = [
     {
       id: 1,
@@ -56,6 +58,18 @@ const Detail = () => {
     },
   ];
 
+  const numbers = [
+    {
+      num: "2M / 56",
+    },
+    {
+      num: "3M / 62",
+    },
+    {
+      num: "6M / 68",
+    },
+  ];
+
   const tabs = [
     {
       name: "Описание",
@@ -77,6 +91,10 @@ const Detail = () => {
   const handleImageClick = (image) => {
     setActiveProduct(image);
     setActiveImage(true);
+  };
+
+  const handleClick = (index) => {
+    setActive(index);
   };
 
   return (
@@ -143,9 +161,15 @@ const Detail = () => {
             <span className="item__block-text">Платье Rare Edition</span>
 
             <div className="item__block-number">
-              <span className="item__number">2M / 56</span>
-              <span className="item__number">3M / 62</span>
-              <span className="item__number">6M / 68</span>
+              {numbers.map((n, i) => (
+                <span
+                  key={i}
+                  className={`item__number ${active === i ? "active" : ""}`}
+                  onClick={() => handleClick(i)}
+                >
+                  {n.num}
+                </span>
+              ))}
             </div>
 
             <div className="item__buttons">

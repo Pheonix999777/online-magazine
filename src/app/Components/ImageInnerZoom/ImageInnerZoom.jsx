@@ -4,13 +4,13 @@ import "./styles.scss";
 const Zoom = ({ src }) => {
   const imageRef = useRef(null);
 
-  const handleMouseEnter = () => {
-    const size = imageRef.current.getBoundingClientRect();
-    imageRef.current.style.setProperty("--x", `${size.x}px`);
-    imageRef.current.style.setProperty("--y", `${size.y}px`);
-    imageRef.current.style.setProperty("--width", `${size.width}px`);
-    imageRef.current.style.setProperty("--height", `${size.height}px`);
-  };
+  // const handleMouseEnter = () => {
+  //   const size = imageRef.current.getBoundingClientRect();
+  //   imageRef.current.style.setProperty("--x", `${size.x}px`);
+  //   imageRef.current.style.setProperty("--y", `${size.y}px`);
+  //   imageRef.current.style.setProperty("--width", `${size.width}px`);
+  //   imageRef.current.style.setProperty("--height", `${size.height}px`);
+  // };
 
   const handleMouseMove = (e) => {
     const { left, top, width, height } =
@@ -23,11 +23,7 @@ const Zoom = ({ src }) => {
   };
 
   return (
-    <div
-      className="image"
-      onMouseEnter={handleMouseEnter}
-      onMouseMove={handleMouseMove}
-    >
+    <div className="image" onMouseMove={handleMouseMove}>
       <img ref={imageRef} src={src} alt="" className="img" />
     </div>
   );

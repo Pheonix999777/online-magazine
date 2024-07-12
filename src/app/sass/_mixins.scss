@@ -11,6 +11,13 @@
   align-items: center;
 }
 
+@mixin style-btn {
+  border: none;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+}
+
 @mixin bg-color {
   border-radius: 3px;
   background: $bg-color;
