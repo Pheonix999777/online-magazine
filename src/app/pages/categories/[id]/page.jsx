@@ -8,12 +8,16 @@ import { useParams } from "next/navigation";
 import Image from "next/image";
 import "./styles.scss";
 import { RiArrowRightSLine } from "react-icons/ri";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
 import Shopping from "../../../../../public/icons/shoppingbag.svg";
 import Zoom from "@/app/Components/ImageInnerZoom/ImageInnerZoom";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/app/store/Slices/Add.Slices";
+import { addCart } from "@/app/store/Slices/Cart.Slices";
+import Heart from "../../../../../public/icons/heart.svg";
 
 const Detail = () => {
   const params = useParams();
@@ -22,6 +26,8 @@ const Detail = () => {
   const [activeTab, setActiveTab] = useState(0);
 
   const [active, setActive] = useState();
+
+  const [scroll, setScroll] = useState(false);
 
   const products = [
     {
@@ -97,8 +103,43 @@ const Detail = () => {
     setActive(index);
   };
 
+  const dispatch = useDispatch();
+
+  const handleAddLike = (productId) => {
+    dispatch(
+      addToCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
+
+  const handleAddCart = (productId) => {
+    dispatch(
+      addCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
+
+  const changeBackground = () => {
+    if (window.scrollY >= 90) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
+
   return (
-    <section className="item">
+    <section className={`item ${scroll ? "item__scroll" : ""}`}>
       <Container>
         <div className="item__flex">
           <span className="item__line">
@@ -322,7 +363,17 @@ const Detail = () => {
                 <span className="category__price"> {item.price}</span>
               </Link>
 
-              <button className="category__card">
+              <div
+                className="category__like"
+                onClick={() => handleAddLike(item.id)}
+              >
+                <Heart />
+              </div>
+
+              <button
+                className="category__card"
+                onClick={() => handleAddCart(item.id)}
+              >
                 <Shopping />
                 добавить в корзину
               </button>

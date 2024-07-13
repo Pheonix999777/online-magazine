@@ -8,7 +8,7 @@ import Heart from "../../../../public/icons/heart.svg";
 import Analiytics from "../../../../public/icons/analiytics.svg";
 import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 
 export default function Header() {
@@ -33,8 +33,8 @@ export default function Header() {
     { label: "младенцы" },
   ];
 
-  const changeBaground = () => {
-    if (window.scrollY >= 110) {
+  const changeBackground = () => {
+    if (window.scrollY >= 90) {
       setSticky(true);
     } else {
       setSticky(false);
@@ -45,7 +45,12 @@ export default function Header() {
     setIsInputVisible(!isInputVisible);
   };
 
-  window.addEventListener("scroll", changeBaground);
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
 
   return (
     <header className="header">

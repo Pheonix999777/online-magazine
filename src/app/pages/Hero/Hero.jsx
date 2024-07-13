@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Container from "@/app/Components/Container/Container";
 import Image from "next/image";
 import Img from "../../../../public/Imiges/pngwing 1.png";
@@ -13,6 +13,8 @@ import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import Photo from "../../../../public/Imiges/photo.png";
 
 const Hero = () => {
+  const [scroll, setScroll] = useState(false);
+
   const images = [
     {
       img: Img,
@@ -36,8 +38,23 @@ const Hero = () => {
     },
   ];
 
+  const changeBackground = () => {
+    if (window.scrollY >= 90) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
+
   return (
-    <section className="hero">
+    <section className={`hero ${scroll ? "hero__scroll" : ""}`}>
       <Container>
         <div className="hero__box">
           <Swiper

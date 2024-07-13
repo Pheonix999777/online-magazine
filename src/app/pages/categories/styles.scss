@@ -3,13 +3,18 @@
   padding-bottom: 157px;
 }
 
+.category__scroll {
+  padding-top: 90px;
+}
+
 .category__flex {
   margin-bottom: 34px;
 }
 
 .category__flex-sticky {
-  position: fixed;
-  z-index: 100;
+  position: sticky;
+  top: 75px;
+  z-index: 40;
   width: 100%;
 }
 
@@ -121,6 +126,7 @@
 }
 
 .category__list {
+  position: relative;
   cursor: pointer;
 }
 
@@ -142,6 +148,12 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.category__like {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .category__text {

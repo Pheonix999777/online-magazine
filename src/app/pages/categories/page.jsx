@@ -10,12 +10,19 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
 import "./styles.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/app/store/Slices/Add.Slices";
+import { addCart } from "@/app/store/Slices/Cart.Slices";
+import Heart from "../../../../public/icons/heart.svg";
 
 export default function Categories() {
   const [openIndex, setOpenIndex] = useState(null);
+  const [scroll, setScroll] = useState(false);
 
   const [isSticky, setSticky] = useState(false);
+
+  const [lastScrollY, setLastScrollY] = useState(400);
 
   const [data, setData] = useState([
     { title: "Размеры", text: "не выбрана", label: "Price" },
@@ -68,18 +75,59 @@ export default function Categories() {
     setOpenIndex(null);
   };
 
-  const changeBaground = () => {
-    if (window.scrollY >= 490) {
-      setSticky(true);
-    } else {
+  const changeBackground = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
       setSticky(false);
+    } else {
+      if (currentScrollY <= 510) {
+        setSticky(true);
+      }
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  const changeSection = () => {
+    if (window.scrollY >= 90) {
+      setScroll(true);
+    } else {
+      setScroll(false);
     }
   };
 
-  window.addEventListener("scroll", changeBaground);
+  useEffect(() => {
+    window.addEventListener("scroll", changeSection);
+    window.addEventListener("scroll", changeBackground);
+
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, [lastScrollY]);
+
+  const dispatch = useDispatch();
+
+  const handleAddLike = (productId) => {
+    dispatch(
+      addToCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
+
+  const handleAddCart = (productId) => {
+    dispatch(
+      addCart({
+        productId,
+        quantity: 1,
+      })
+    );
+  };
 
   return (
-    <section className="category">
+    <section className={`category ${scroll ? "category__scroll" : ""}`}>
       <Container>
         <div
           className={`category__flex ${
@@ -159,7 +207,17 @@ export default function Categories() {
                 <span className="category__price"> {item.price}</span>
               </Link>
 
-              <button className="category__card">
+              <div
+                className="category__like"
+                onClick={() => handleAddLike(item.id)}
+              >
+                <Heart />
+              </div>
+
+              <button
+                className="category__card"
+                onClick={() => handleAddCart(item.id)}
+              >
                 <Shopping />
                 добавить в корзину
               </button>
@@ -192,7 +250,17 @@ export default function Categories() {
                   <span className="category__price"> {item.price}</span>
                 </Link>
 
-                <button className="category__card">
+                <div
+                  className="category__like"
+                  onClick={() => handleAddLike(item.id)}
+                >
+                  <Heart />
+                </div>
+
+                <button
+                  className="category__card"
+                  onClick={() => handleAddCart(item.id)}
+                >
                   <Shopping />
                   добавить в корзину
                 </button>

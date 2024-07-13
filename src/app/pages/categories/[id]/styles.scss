@@ -3,6 +3,10 @@
   padding-bottom: 72px;
 }
 
+.item__scroll {
+  padding-top: 90px;
+}
+
 .item__flex {
   margin-bottom: 28px;
 }
@@ -190,6 +194,7 @@
 }
 
 .category__list {
+  position: relative;
   cursor: pointer;
 }
 
@@ -211,6 +216,12 @@
   &:hover {
     transform: scale(1.1);
   }
+}
+
+.category__like {
+  position: absolute;
+  top: 20px;
+  right: 20px;
 }
 
 .category__text {

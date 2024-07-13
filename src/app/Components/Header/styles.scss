@@ -151,7 +151,6 @@
 
 .header__search {
   @include style-btn;
-  padding-right: 19px;
 }
 
 .header__actions-number {
@@ -193,6 +192,10 @@
 .header__input-container.visible {
   width: 100%;
   max-width: 200px;
+}
+
+.header__search {
+  margin-right: 20px;
 }
 
 .header__input {
