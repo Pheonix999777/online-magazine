@@ -1,21 +1,18 @@
 .category {
   padding-top: 35px;
   padding-bottom: 157px;
-}
-
-.category__scroll {
-  padding-top: 90px;
+  &.scroll {
+    padding-top: 90px;
+  }
 }
 
 .category__flex {
   margin-bottom: 34px;
-}
-
-.category__flex-sticky {
-  position: sticky;
-  top: 75px;
-  z-index: 40;
-  width: 100%;
+  &.sticky {
+    position: sticky;
+    top: 75px;
+    z-index: 40;
+  }
 }
 
 .category__wrapper {

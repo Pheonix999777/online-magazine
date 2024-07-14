@@ -11,6 +11,7 @@
 
 .faqs__wrapper {
   max-width: 588px;
+  flex-wrap: 1;
 }
 
 .faqs__title {
@@ -37,4 +38,24 @@
 
 .faqs__titul {
   display: block;
+}
+
+.faqs__img {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 950px) {
+  .faqs .container {
+    flex-wrap: wrap;
+  }
+
+  .faqs__wrapper {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .faqs__content {
+    flex-wrap: wrap;
+    grid-row-gap: 20px;
+  }
 }

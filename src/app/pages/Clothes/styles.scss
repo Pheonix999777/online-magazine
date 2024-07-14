@@ -59,6 +59,7 @@
 
 .clothes__boxes {
   margin-left: 20px;
+  flex-grow: 1;
 }
 
 .clothes__product {
@@ -89,6 +90,7 @@
 
 .clothes__product-box {
   display: flex;
+  width: 100%;
   margin-top: 20px;
 }
 
@@ -142,4 +144,81 @@
 
 .clothes__btn:hover .clothes__btn-new-icon {
   transform: translateX(20%);
+}
+
+@media screen and (max-width: 1200px) {
+  .clothes__content {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .clothes__box {
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: 1;
+    padding: 75px 23px 31px 40px;
+  }
+
+  .clothes__product-bottom {
+    display: inline-flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    padding: 46px 19px 26px 26px;
+  }
+
+  .clothes__boxes {
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .clothes__box {
+    padding: 40px 25px 25px 30px;
+  }
+
+  .clothes__text {
+    font-size: 12px;
+  }
+
+  .clothes__title {
+    font-size: 20px;
+  }
+
+  .clothes__price {
+    font-size: 12px;
+  }
+
+  .clothes__link-box {
+    margin-top: 80px;
+  }
+
+  .clothes__subname {
+    font-size: 16px;
+  }
+
+  .clothes__product {
+    padding: 40px 25px 0 30px;
+  }
+
+  .clothes__price-text {
+    font-size: 12px;
+  }
+
+  .clothes__product-wrapper {
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .clothes__title {
+    font-size: 16px;
+  }
+
+  .clothes__link-box {
+    margin-top: 40px;
+  }
+
+  .clothes__btn {
+    font-size: 12px;
+  }
 }

@@ -9,8 +9,15 @@
 
 .footer__flex {
   display: flex;
+  flex-wrap: wrap;
+  grid-column-gap: 20px;
+  grid-row-gap: 40px;
   justify-content: space-between;
   padding-bottom: 42px;
+}
+
+.footer__wrapper {
+  flex-grow: 1;
 }
 
 .footer__info {
@@ -76,6 +83,7 @@
 
 .footer__bottom {
   display: flex;
+  flex-wrap: wrap;
   padding: 16px 0 19px 0;
   border-top: 1px solid #eee;
   gap: 20px;

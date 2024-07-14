@@ -10,7 +10,7 @@ import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
 import "./styles.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
@@ -19,10 +19,9 @@ import Heart from "../../../../public/icons/heart.svg";
 export default function Categories() {
   const [openIndex, setOpenIndex] = useState(null);
   const [scroll, setScroll] = useState(false);
-
   const [isSticky, setSticky] = useState(false);
-
   const [lastScrollY, setLastScrollY] = useState(400);
+  const dropdownRef = useRef([]);
 
   const [data, setData] = useState([
     { title: "Размеры", text: "не выбрана", label: "Price" },
@@ -98,13 +97,26 @@ export default function Categories() {
   };
 
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        openIndex !== null &&
+        dropdownRef.current[openIndex] &&
+        !dropdownRef.current[openIndex].contains(event.target)
+      ) {
+        setOpenIndex(null);
+      }
+    };
+
     window.addEventListener("scroll", changeSection);
     window.addEventListener("scroll", changeBackground);
+    document.addEventListener("mousedown", handleClickOutside);
 
     return () => {
       window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener("scroll", changeSection);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [lastScrollY]);
+  }, [openIndex, lastScrollY]);
 
   const dispatch = useDispatch();
 
@@ -127,16 +139,16 @@ export default function Categories() {
   };
 
   return (
-    <section className={`category ${scroll ? "category__scroll" : ""}`}>
-      <Container>
-        <div
-          className={`category__flex ${
-            isSticky ? "category__flex-sticky" : ""
-          }`}
-        >
+    <section className={`category ${scroll ? "scroll" : ""}`}>
+      <div className={`category__flex ${isSticky ? "sticky" : ""}`}>
+        <Container>
           <div className="category__wrapper">
             {data.map((item, index) => (
-              <div key={index} className="category__words">
+              <div
+                key={index}
+                className="category__words"
+                ref={(el) => (dropdownRef.current[index] = el)}
+              >
                 {item.title}:
                 <span
                   onClick={() => handleChange(index)}
@@ -182,7 +194,10 @@ export default function Categories() {
               <RiArrowDownSLine style={{ fill: "#297EFF" }} />
             </div>
           </div>
-        </div>
+        </Container>
+      </div>
+
+      <Container>
         <span className="category__select">
           Топ бестселлеров <MdOutlineKeyboardArrowRight />
         </span>

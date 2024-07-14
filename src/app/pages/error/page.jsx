@@ -1,7 +1,7 @@
 import Container from "@/app/Components/Container/Container";
 import "./styles.scss";
 
-export default function NotFound() {
+export default function Error() {
   return (
     <Container>
       <h1 className="error">

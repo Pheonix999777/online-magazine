@@ -11,6 +11,7 @@ import Logo5 from "../../../../public/Imiges/image 216.png";
 import Logo6 from "../../../../public/Imiges/image 215.png";
 import Logo7 from "../../../../public/Imiges/image 214.png";
 import Logo8 from "../../../../public/Imiges/image 212.png";
+import Logo9 from "../../../../public/Imiges/image-removebg-preview (27) 1.png";
 
 export default function Clients() {
   const clients = [
@@ -71,9 +72,9 @@ export default function Clients() {
   return (
     <section className="clients">
       <Container>
-       <div className="clients__container"> 
-       <span className="clients__title">Что говорят наши клиенты</span>
-       </div>
+        <div className="clients__container">
+          <span className="clients__title">Что говорят наши клиенты</span>
+        </div>
         <div className="clients__main">
           <Marquee pauseOnClick>
             {clients.map((client, index) => (

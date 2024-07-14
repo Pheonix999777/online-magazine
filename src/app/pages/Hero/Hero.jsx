@@ -18,22 +18,22 @@ const Hero = () => {
   const images = [
     {
       img: Img,
-      title: "Jackets for all kinds",
+      title: "Jackets for all kinds of deseases",
       text: "Clothing is typically made of fabrics",
     },
     {
       img: Img,
-      title: "Jackets for all kinds 10",
+      title: "Jackets for all kinds of deseases",
       text: "Clothing is typically made of fabrics",
     },
     {
       img: Img,
-      title: "Jackets for all kinds 30",
+      title: "Jackets for all kinds of deseases",
       text: "Clothing is typically made of fabrics",
     },
     {
       img: Img,
-      title: "Jackets for all kinds 30",
+      title: "Jackets for all kinds of deseases",
       text: "Clothing is typically made of fabrics",
     },
   ];

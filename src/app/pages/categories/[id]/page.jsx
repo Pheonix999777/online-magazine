@@ -25,6 +25,8 @@ const Detail = () => {
 
   const [activeTab, setActiveTab] = useState(0);
 
+  const [clickedIndex, setClickedIndex] = useState(null);
+
   const [active, setActive] = useState();
 
   const [scroll, setScroll] = useState(false);
@@ -94,11 +96,11 @@ const Detail = () => {
 
   const product = products.find((item) => item.id === parseInt(id, 10));
 
-  const handleImageClick = (image) => {
+  const handleImageClick = (index, image) => {
+    setClickedIndex(index);
     setActiveProduct(image);
     setActiveImage(true);
   };
-
   const handleClick = (index) => {
     setActive(index);
   };
@@ -178,8 +180,10 @@ const Detail = () => {
             {products.map((item, index) => (
               <div
                 key={index}
-                className="item__wrapper"
-                onClick={() => handleImageClick(item.img)}
+                className={`item__wrapper ${
+                  clickedIndex === index ? "clicked" : ""
+                }`}
+                onClick={() => handleImageClick(index, item.img)}
               >
                 <Image src={item.img} alt={item.title} width={70} height={74} />
               </div>

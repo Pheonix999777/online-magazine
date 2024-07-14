@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Image from "next/image";
 
-export default function LikeCarts() {
+export default function Wishlist() {
   const carts = useSelector((state) => state.cart.item);
   const [cartDetails, setCartDetails] = useState([]);
 
