@@ -4,7 +4,7 @@
 }
 
 .item__scroll {
-  padding-top: 90px;
+  padding-top: 75px;
 }
 
 .item__flex {
@@ -188,8 +188,8 @@
 
 .category__ul {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+  gap: 60px 20px;
   list-style: none;
 }
 
@@ -234,7 +234,7 @@
 
 .category__title {
   color: $font-color;
-  font-size: 20px;
+  font-size: 18px;
   margin-top: 2px;
 }
 

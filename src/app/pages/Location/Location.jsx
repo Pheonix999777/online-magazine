@@ -2,9 +2,10 @@ import Container from "@/app/Components/Container/Container";
 import { FaAngleDoubleRight } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
-import address from "../../../../public/Imiges/Ellipse 1104.png";
+import address from "../../../../public/Imiges/Ellipse 1105.png";
 import { RiInstagramFill, RiFacebookFill } from "react-icons/ri";
 import { FaTwitter } from "react-icons/fa6";
+import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import "./styles.scss";
 
 export default function Location() {
@@ -18,9 +19,15 @@ export default function Location() {
               <h4 className="location__title">
                 Обращайтесь в магазин, мы поможем решить ситуацию в вашу пользу.
               </h4>
+
               <button className="location__btn">
-                <FaAngleDoubleRight />
-                открыть локацию
+                <span className="location__btn-icon">
+                  <DubbleRight />
+                </span>
+                <span className="location__btn-new-icon">
+                  <DubbleRight />
+                </span>
+                Подробнее
               </button>
               <span className="location__text">наши социальные медии:</span>
 
@@ -50,6 +57,7 @@ export default function Location() {
                   name="email"
                   placeholder="Ваш email address"
                 />
+
                 <button className="location__arrow">
                   <IoIosArrowForward />
                 </button>
@@ -58,7 +66,8 @@ export default function Location() {
           </div>
 
           <div className="location__address">
-            <Image className="location__img" src={address} alt="" />
+            <div className="location__address-box"></div>
+            <Image className="location__img" src={address} alt="address" />
           </div>
         </div>
       </Container>

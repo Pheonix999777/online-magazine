@@ -11,7 +11,6 @@ import Logo5 from "../../../../public/Imiges/image 216.png";
 import Logo6 from "../../../../public/Imiges/image 215.png";
 import Logo7 from "../../../../public/Imiges/image 214.png";
 import Logo8 from "../../../../public/Imiges/image 212.png";
-import Logo9 from "../../../../public/Imiges/image-removebg-preview (27) 1.png";
 
 export default function Clients() {
   const clients = [
@@ -95,14 +94,15 @@ export default function Clients() {
         <div className="logo">
           <Marquee pauseOnClick direction="right">
             {Logos.map((item, index) => (
-              <Image
-                className="logo__img"
-                key={index}
-                src={item.img}
-                alt="Logo"
-                width={127}
-                height={60}
-              />
+              <div className="logo__wrapper" key={index}>
+                <Image
+                  className="logo__img"
+                  src={item.img}
+                  alt="Logo"
+                  width={127}
+                  height={60}
+                />
+              </div>
             ))}
           </Marquee>
         </div>

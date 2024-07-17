@@ -1,5 +1,5 @@
 .location {
-  padding: 96px;
+  padding-bottom: 96px;
 }
 
 .location .container {
@@ -43,16 +43,43 @@
   margin-top: 4px;
 }
 
+// hover button styles
 .location__btn {
   @include reset-btn;
   padding: 13px 23px;
   margin-top: 24px;
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: hidden;
 }
 
-.location__btn svg {
+.location__btn-icon {
+  display: inline-flex;
+  margin-right: 5px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.location__btn-new-icon {
+  display: inline-flex;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
   margin-right: 8px;
+}
+
+.location__btn:hover .location__btn-icon {
+  transform: translateX(200%);
+  opacity: 0;
+}
+
+.location__btn:hover .location__btn-new-icon {
+  transform: translateX(140%);
+}
+
+.location__btn path {
+  fill: $orange;
 }
 
 .location__social-icons {
@@ -101,21 +128,29 @@
 }
 
 .location__address {
-  background-image: url("/Imiges/Ellipse\ 1105.png");
-  background-size: 100% 350px;
-  background-position-x: -50px;
-  background-position-y: 25px;
-  background-repeat: no-repeat;
+  position: relative;
   width: 100%;
+  height: 400px;
+  left: -90px;
+  border-radius: 1301px;
+  overflow: hidden;
+}
+
+.location__address-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(255, 255, 255, 0) 0%,
+    #fff 100%
+  );
 }
 
 .location__img {
   width: 100%;
   height: 400px;
   object-fit: cover;
-  position: absolute;
-  left: -30px;
-  top: 0;
-  border-radius: 1301px;
-  z-index: 0;
 }

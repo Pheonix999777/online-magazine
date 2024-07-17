@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 const Zoom = ({ src }) => {
   const imageRef = useRef(null);

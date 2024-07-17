@@ -31,13 +31,22 @@
   width: 100%;
   max-width: 540px;
   display: inline-flex;
-  margin-top: 40px;
+  margin-top: 35px;
   justify-content: space-between;
   gap: 10px;
 }
 
+.faqs__box {
+  color: #282a2c;
+  font-size: 22px;
+  font-weight: 500;
+}
+
 .faqs__titul {
   display: block;
+  color: #282a2c;
+  font-size: 13px;
+  opacity: 0.5;
 }
 
 .faqs__img {
@@ -49,13 +58,28 @@
     flex-wrap: wrap;
   }
 
-  .faqs__wrapper {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-
   .faqs__content {
     flex-wrap: wrap;
     grid-row-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .faqs {
+    padding-bottom: 20px;
+  }
+
+  .faqs__title {
+    font-size: 18px;
+  }
+
+  .faqs__text {
+    font-size: 14px;
+  }
+
+  .faqs__img {
+    position: relative;
+    top: -40px;
+    margin-left: 0;
   }
 }

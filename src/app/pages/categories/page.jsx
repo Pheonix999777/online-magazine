@@ -37,28 +37,24 @@ export default function Categories() {
       img: Img,
       title: "Худи для мальчика с утеплителем Fellex®",
       price: "7 000 000 so’m",
-      new: true,
     },
     {
       id: 2,
       img: Img2,
       title: "Куртка для девочки с утеплителем Fellex® ",
       price: "7 000 000 so’m",
-      new: false,
     },
     {
       id: 3,
       img: Img3,
       title: "Блузка для девочки с утеплителем Fellex®",
       price: "7 000 000 so’m",
-      new: true,
     },
     {
       id: 4,
       img: Img4,
       title: "Блузка для девочки с утеплителем Fellex®",
       price: "7 000 000 so’m",
-      new: true,
     },
   ];
 

@@ -10,6 +10,8 @@ import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { HiOutlineMenuAlt4 } from "react-icons/hi";
+import Menu from "../../../../public/icons/menu.svg";
 
 export default function Header() {
   const [isInputVisible, setIsInputVisible] = useState(false);
@@ -175,7 +177,8 @@ export default function Header() {
 
               <Link href={"/pages/categories"} className="header__category">
                 <CgMenuGridO style={{ marginRight: "2px" }} />
-                все категории
+                <span className="header__full-text">все категории</span>
+                <span className="header__short-text">все</span>
               </Link>
             </div>
 
@@ -217,10 +220,20 @@ export default function Header() {
                 </Link>
 
                 <button className="header__login">
-                  <User style={{ marginRight: "2px", marginBottom: "2px" }} />
+                  <User />
                   Войти
                 </button>
               </div>
+            </div>
+
+            <div className="header__mobile-flex">
+              <a className="header__short-logo" href="/">
+                Get it
+              </a>
+              <button className="header__mobile-btn">
+                <Menu />
+                <User />
+              </button>
             </div>
           </div>
         </Container>

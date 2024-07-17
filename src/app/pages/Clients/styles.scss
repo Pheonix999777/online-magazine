@@ -5,6 +5,7 @@
 
 .clients .container {
   max-width: 1500px;
+  padding: 0;
 }
 
 .clients__container {
@@ -14,7 +15,6 @@
 }
 
 .clients__main {
-  margin-left: -20px;
   background: #fff;
   box-shadow: 14px 11px 134px 0px rgba(60, 68, 99, 0.05);
 }
@@ -71,13 +71,33 @@
 }
 
 .logo__img {
-  margin-left: 49px;
-
   object-fit: cover;
+}
+
+.logo__wrapper {
+  margin-left: 49px;
 }
 
 @media screen and (max-width: 768px) {
   .clients__wrapper {
     padding: 30px 40px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .clients {
+    padding-bottom: 120px;
+  }
+
+  .clients__title {
+    font-size: 18px;
+  }
+
+  .logo {
+    margin-top: 100px;
+  }
+
+  .logo__wrapper {
+    margin-left: 20px;
   }
 }

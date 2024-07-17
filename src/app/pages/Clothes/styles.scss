@@ -143,7 +143,7 @@
 }
 
 .clothes__btn:hover .clothes__btn-new-icon {
-  transform: translateX(20%);
+  transform: translateX(10%);
 }
 
 @media screen and (max-width: 1200px) {
@@ -180,28 +180,12 @@
     font-size: 12px;
   }
 
-  .clothes__title {
-    font-size: 20px;
-  }
-
-  .clothes__price {
-    font-size: 12px;
-  }
-
   .clothes__link-box {
     margin-top: 80px;
   }
 
-  .clothes__subname {
-    font-size: 16px;
-  }
-
   .clothes__product {
     padding: 40px 25px 0 30px;
-  }
-
-  .clothes__price-text {
-    font-size: 12px;
   }
 
   .clothes__product-wrapper {
@@ -210,10 +194,6 @@
 }
 
 @media screen and (max-width: 475px) {
-  .clothes__title {
-    font-size: 16px;
-  }
-
   .clothes__link-box {
     margin-top: 40px;
   }
