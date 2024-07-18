@@ -13,7 +13,7 @@ export default function Clothes() {
     <section className="clothes">
       <Container>
         <div className="clothes__content">
-          <div className="clothes__box">
+          <div className="clothes__product box1">
             <div className="clothes__wrapper">
               <span className="clothes__text">144 одежд</span>
               <h2 className="clothes__title">
@@ -33,97 +33,99 @@ export default function Clothes() {
               </div>
             </div>
 
-            <Image
-              className="clothes__img"
-              src={Img}
-              alt=""
-              width={294}
-              height={386}
-            />
-          </div>
-
-          <div className="clothes__boxes">
-            <div className="clothes__product">
-              <div className="clothes__product-div">
-                <span className="clothes__text">364 одежд</span>
-                <h3 className="clothes__subname">Одежды для мальчиков</h3>
-                <span className="clothes__price-text">от 60 000 uzs</span>
-                <div className="clothes__product-wrapper">
-                  <Link href={"#"} className="clothes__btn">
-                    <span className="clothes__btn-icon">
-                      <DubbleRight />
-                    </span>
-                    <span className="clothes__btn-new-icon">
-                      <DubbleRight />
-                    </span>
-                    Подробнее
-                  </Link>
-                </div>
-              </div>
-
+            <div className="clothes__img-box">
               <Image
                 className="clothes__img"
+                src={Img}
+                alt=""
+                width={294}
+                height={386}
+              />
+            </div>
+          </div>
+          <div className="clothes__product box2">
+            <div className="clothes__product-div">
+              <span className="clothes__text">364 одежд</span>
+              <h3 className="clothes__subname">Одежды для мальчиков </h3>
+              <span className="clothes__price-text">от 60 000 uzs</span>
+              <div className="clothes__product-wrapper">
+                <Link href={"#"} className="clothes__btn">
+                  <span className="clothes__btn-icon">
+                    <DubbleRight />
+                  </span>
+                  <span className="clothes__btn-new-icon">
+                    <DubbleRight />
+                  </span>
+                  Подробнее
+                </Link>
+              </div>
+            </div>
+            <div className="clothes__img-box">
+              <Image
+                className="clothes__product-img"
                 src={Img2}
                 alt=""
                 width={268}
                 height={268}
               />
             </div>
+          </div>
 
-            <div className="clothes__product-box">
-              <div className="clothes__product-bottom">
-                <div className="clothes__product-text">
-                  <span className="clothes__text">364 одежд</span>
-                  <h3 className="clothes__subname">Одежды для мальчиков</h3>
-                  <span className="clothes__price-text">от 60 000 uzs</span>
-                  <div className="clothes__product-wrapper">
-                    <Link href={"#"} className="clothes__btn">
-                      <span className="clothes__btn-icon">
-                        <DubbleRight />
-                      </span>
-                      <span className="clothes__btn-new-icon">
-                        <DubbleRight />
-                      </span>
-                      Подробнее
-                    </Link>
-                  </div>
-                </div>
-
-                <Image
-                  className="clothes__img"
-                  src={Img3}
-                  alt=""
-                  width={151}
-                  height={151}
-                />
+          <div className="clothes__product-bottom ">
+            <div className="clothes__product-text">
+              <span className="clothes__text">364 одежд</span>
+              <h3 className="clothes__subname">Одежды для мальчиков</h3>
+              <span className="clothes__price-text">от 60 000 uzs</span>
+              <div className="clothes__product-wrapper">
+                <Link href={"#"} className="clothes__btn">
+                  <span className="clothes__btn-icon">
+                    <DubbleRight />
+                  </span>
+                  <span className="clothes__btn-new-icon">
+                    <DubbleRight />
+                  </span>
+                  Подробнее
+                </Link>
               </div>
+            </div>
 
-              <div className="clothes__product-bottom">
-                <div className="clothes__product-text">
-                  <span className="clothes__text">364 одежд</span>
-                  <h3 className="clothes__subname">Одежды для мальчиков</h3>
-                  <span className="clothes__price-text">от 60 000 uzs</span>
-                  <div className="clothes__product-wrapper">
-                    <Link href={"#"} className="clothes__btn">
-                      <span className="clothes__btn-icon">
-                        <DubbleRight />
-                      </span>
-                      <span className="clothes__btn-new-icon">
-                        <DubbleRight />
-                      </span>
-                      Подробнее
-                    </Link>
-                  </div>
-                </div>
+            <div className="clothes__img-box">
+              <Image
+                className="clothes__bottom-img"
+                src={Img3}
+                alt=""
+                width={151}
+                height={151}
+              />
+            </div>
+          </div>
 
-                <Image
-                  className="clothes__img"
-                  src={Img4}
-                  alt=""
-                  width={151}
-                  height={151}
-                />
+          <div className="clothes__product-bottom">
+            <div className="clothes__product-text">
+              <span className="clothes__text">364 одежд</span>
+              <h3 className="clothes__subname">Одежды для мальчиков</h3>
+              <span className="clothes__price-text">от 60 000 uzs</span>
+              <div className="clothes__product-wrapper">
+                <Link href={"#"} className="clothes__btn">
+                  <span className="clothes__btn-icon">
+                    <DubbleRight />
+                  </span>
+                  <span className="clothes__btn-new-icon">
+                    <DubbleRight />
+                  </span>
+                  Подробнее
+                </Link>
               </div>
+            </div>
+
+            <div className="clothes__img-box">
+              <Image
+                className="clothes__bottom-img"
+                src={Img4}
+                alt=""
+                width={151}
+                height={151}
+              />
             </div>
           </div>
         </div>

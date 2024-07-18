@@ -154,3 +154,43 @@
   height: 400px;
   object-fit: cover;
 }
+
+@media screen and (max-width: 425px) {
+  .location {
+    padding-bottom: 70px;
+  }
+
+  .location__flex {
+    flex-direction: column;
+  }
+
+  .location__box {
+    padding: 40px 20px;
+  }
+
+  .location__wrapper {
+    max-width: 237px;
+  }
+
+  .location__text {
+    font-size: 12px;
+  }
+
+  .location__title {
+    font-size: 16px;
+  }
+
+  .location__address {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    left: 0;
+    top: -20px;
+    border-radius: 652.767px;
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(255, 255, 255, 0) 0%,
+      #fff 100%
+    );
+  }
+}

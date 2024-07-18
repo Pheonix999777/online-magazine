@@ -7,6 +7,7 @@ import { RiInstagramFill, RiFacebookFill } from "react-icons/ri";
 import { FaTwitter } from "react-icons/fa6";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import "./styles.scss";
+import Link from "next/link";
 
 export default function Location() {
   return (
@@ -66,8 +67,10 @@ export default function Location() {
           </div>
 
           <div className="location__address">
-            <div className="location__address-box"></div>
-            <Image className="location__img" src={address} alt="address" />
+            <Link href={"https://yandex.uz/maps/-/CDSCaFKC"} target="_blank">
+              <div className="location__address-box"></div>
+              <Image className="location__img" src={address} alt="address" />
+            </Link>
           </div>
         </div>
       </Container>

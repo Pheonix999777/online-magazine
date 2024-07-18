@@ -215,7 +215,12 @@ export default function Categories() {
                 </div>
                 <span className="category__text">New</span>
                 <h3 className="category__title">{item.title}</h3>
-                <span className="category__price"> {item.price}</span>
+                <span className="category__price">
+                  {item.price}
+                  <button className="category__hidden-btn">
+                    <Shopping />
+                  </button>
+                </span>
               </Link>
 
               <div
@@ -258,7 +263,12 @@ export default function Categories() {
                   </div>
                   <span className="category__text">New</span>
                   <h3 className="category__title">{item.title}</h3>
-                  <span className="category__price"> {item.price}</span>
+                  <span className="category__price">
+                    {item.price}
+                    <button className="category__hidden-btn">
+                      <Shopping />
+                    </button>
+                  </span>
                 </Link>
 
                 <div

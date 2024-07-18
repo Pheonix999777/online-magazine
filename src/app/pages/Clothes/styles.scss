@@ -3,7 +3,9 @@
 }
 
 .clothes__content {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
 }
 
 .clothes__box {
@@ -13,14 +15,22 @@
   padding: 75px 23px 31px 40px;
 }
 
+.box1 {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.box2 {
+  grid-column: span 2;
+}
+
 .clothes__wrapper {
-  display: block;
   max-width: 335px;
 }
 
 .clothes__text {
   color: $font-color;
-  font-size: 16px;
+  font-size: 12px;
   opacity: 0.5;
   margin-bottom: 4px;
 }
@@ -57,9 +67,18 @@
   }
 }
 
-.clothes__boxes {
-  margin-left: 20px;
-  flex-grow: 1;
+.clothes__product-img {
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.clothes__bottom-img {
+  transition: 0.5s;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .clothes__product {
@@ -98,10 +117,6 @@
   display: inline-flex;
   background: $bg-color;
   padding: 46px 19px 26px 26px;
-}
-
-.clothes__product-bottom:not(:first-child) {
-  margin-left: 20px;
 }
 
 .clothes__product-text {
@@ -165,40 +180,78 @@
     flex-grow: 1;
     padding: 46px 19px 26px 26px;
   }
-
-  .clothes__boxes {
-    margin-left: 0;
-  }
 }
 
-@media screen and (max-width: 768px) {
-  .clothes__box {
-    padding: 40px 25px 25px 30px;
+@media screen and (max-width: 425px) {
+  .clothes {
+    padding: 40px 0 81px 0;
   }
 
-  .clothes__text {
-    font-size: 12px;
+  .clothes__content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .clothes__box,
+  .clothes__product,
+  .clothes__product-bottom {
+    flex-direction: column;
+    padding: 18px 18px 0 18px;
+    overflow: hidden;
+  }
+
+  .box1 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .box2 {
+    grid-column: span 1;
+  }
+
+  .clothes__title {
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .clothes__subname {
+    font-size: 13px;
   }
 
   .clothes__link-box {
-    margin-top: 80px;
+    display: none;
   }
 
-  .clothes__product {
-    padding: 40px 25px 0 30px;
+  .clothes__price {
+    color: #72a900;
   }
 
-  .clothes__product-wrapper {
-    margin-top: 30px;
+  .clothes__img-box {
+    margin-top: -70px;
   }
-}
 
-@media screen and (max-width: 475px) {
-  .clothes__link-box {
-    margin-top: 40px;
+  .clothes__img {
+    width: 120px;
+    position: relative;
+    top: 80px;
+    right: 20px;
+  }
+
+  .clothes__product-img {
+    width: 120px;
+    position: relative;
+    top: 20px;
+    right: 5px;
+  }
+
+  .clothes__bottom-img {
+    width: 120px;
+    position: relative;
+    top: 20px;
+    right: 10px;
   }
 
   .clothes__btn {
-    font-size: 12px;
+    display: none;
   }
 }

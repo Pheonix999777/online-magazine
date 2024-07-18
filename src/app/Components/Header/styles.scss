@@ -239,6 +239,13 @@
 }
 
 @media screen and (max-width: 425px) {
+  .header__bottom {
+    &.sticky {
+      position: fixed;
+      top: 0;
+    }
+  }
+
   .header__logo {
     display: none;
   }
@@ -249,19 +256,21 @@
 
   .header__category {
     padding: 10px 11px;
-    margin-right: auto;
+    margin-right: 0;
     margin-left: 0;
   }
 
   .header__content {
     flex-direction: row-reverse;
+    justify-content: space-between;
     margin-left: 0;
-    padding-right: 8px;
     margin-top: 32px;
+    gap: 20px;
+    padding-right: 8px;
   }
 
   .header__downBtn {
-    font-size: 13px;
+    font-size: 11px;
     padding: 0;
   }
 

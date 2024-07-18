@@ -87,7 +87,12 @@ export default function Product() {
                 </div>
                 <span className="product__text">New</span>
                 <h3 className="product__title">{item.title}</h3>
-                <span className="product__price"> {item.price}</span>
+                <span className="product__price">
+                  {item.price}
+                  <button className="product__hidden-btn">
+                    <Shopping />
+                  </button>
+                </span>
               </Link>
 
               <div
@@ -129,7 +134,12 @@ export default function Product() {
                   </div>
                   <span className="product__text">New</span>
                   <h3 className="product__title">{item.title}</h3>
-                  <span className="product__price"> {item.price}</span>
+                  <span className="product__price">
+                    {item.price}
+                    <button className="product__hidden-btn">
+                      <Shopping />
+                    </button>
+                  </span>
                 </Link>
 
                 <div

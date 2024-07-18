@@ -15,6 +15,15 @@
   }
 }
 
+.category__flex .container {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}
+
 .category__wrapper {
   display: inline-flex;
   gap: 24px;
@@ -23,6 +32,7 @@
   border-radius: 62px;
   background-color: $light;
   padding: 12px 16px;
+  margin-bottom: 5px;
 }
 
 .category__words {
@@ -200,4 +210,71 @@
 
 .category__bottom {
   padding-top: 120px;
+}
+
+@media screen and (max-width: 425px) {
+  .category {
+    padding-bottom: 120px;
+    &.scroll {
+      padding-top: 320px;
+    }
+  }
+
+  .category__select {
+    font-size: 18px;
+  }
+
+  .category__bottom {
+    padding-top: 71px;
+  }
+
+  .category__ul {
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+  }
+
+  .category__ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category__list {
+    max-width: 167px;
+    flex: 0 0 auto;
+  }
+
+  .category__box {
+    padding: 10px;
+  }
+
+  .category__title {
+    font-size: 14px;
+  }
+
+  .category__like {
+    top: 10px;
+    right: 10px;
+  }
+
+  .category__price {
+    width: 100%;
+    display: inline-flex;
+    align-items: flex-end;
+    gap: 32px;
+  }
+
+  .category__card {
+    display: none;
+  }
+
+  .category__hidden-btn {
+    display: block;
+    padding: 10px;
+    border-radius: 60%;
+    border: 1px solid $text-color;
+    background: $light;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
