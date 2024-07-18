@@ -5,7 +5,6 @@ import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png
 import Img2 from "../../../../public/Imiges/image-removebg4.png";
 import Img3 from "../../../../public/Imiges/image-removebg1.png";
 import Img4 from "../../../../public/Imiges/image-removebg2.png";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import Shopping from "../../../../public/icons/shoppingbag.svg";
 import Link from "next/link";
@@ -13,6 +12,7 @@ import Heart from "../../../../public/icons/heart.svg";
 import { useDispatch } from "react-redux";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
+import Text from "@/app/Components/Text/Text";
 
 export default function Product() {
   const products = [
@@ -65,10 +65,7 @@ export default function Product() {
   return (
     <section className="product">
       <Container>
-        <span className="product__select">
-          Топ бестселлеров <MdOutlineKeyboardArrowRight />
-        </span>
-
+        <Text text={"Топ бестселлеров "} />
         <ul className="product__ul">
           {products.map((item, index) => (
             <li key={index} className="product__list">
@@ -113,9 +110,8 @@ export default function Product() {
         </ul>
 
         <div className="product__bottom">
-          <span className="product__select">
-            Новые колекции <MdOutlineKeyboardArrowRight />
-          </span>
+          <Text text={" Новые колекции"} />
+
           <ul className="product__ul">
             {products.map((item, index) => (
               <li key={index} className="product__list">

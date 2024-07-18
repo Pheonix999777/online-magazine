@@ -4,7 +4,6 @@ import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png
 import Img2 from "../../../../public/Imiges/image-removebg4.png";
 import Img3 from "../../../../public/Imiges/image-removebg1.png";
 import Img4 from "../../../../public/Imiges/image-removebg2.png";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import { RiArrowDownSLine } from "react-icons/ri";
 import Link from "next/link";
@@ -15,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
 import Heart from "../../../../public/icons/heart.svg";
+import Text from "@/app/Components/Text/Text";
 
 export default function Categories() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -194,9 +194,8 @@ export default function Categories() {
       </div>
 
       <Container>
-        <span className="category__select">
-          Топ бестселлеров <MdOutlineKeyboardArrowRight />
-        </span>
+        <Text text={"Топ бестселлеров"} />
+
         <ul className="category__ul">
           {products.map((item, index) => (
             <li key={index} className="category__list">
@@ -242,9 +241,8 @@ export default function Categories() {
         </ul>
 
         <div className="category__bottom">
-          <span className="category__select">
-            Новые колекции <MdOutlineKeyboardArrowRight />
-          </span>
+          <Text text={"Новые колекции"} />
+
           <ul className="category__ul">
             {products.map((item, index) => (
               <li key={index} className="category__list">

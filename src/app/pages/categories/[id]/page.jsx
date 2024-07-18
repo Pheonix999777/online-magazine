@@ -13,11 +13,11 @@ import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
 import Shopping from "../../../../../public/icons/shoppingbag.svg";
 import Zoom from "@/app/Components/ImageInnerZoom/ImageInnerZoom";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
 import Heart from "../../../../../public/icons/heart.svg";
+import Text from "@/app/Components/Text/Text";
 
 const Detail = () => {
   const params = useParams();
@@ -141,7 +141,7 @@ const Detail = () => {
   }, []);
 
   return (
-    <section className={`item ${scroll ? "item__scroll" : ""}`}>
+    <section className={`item ${scroll ? "scroll" : ""}`}>
       <Container>
         <div className="item__flex">
           <span className="item__line">
@@ -176,26 +176,33 @@ const Detail = () => {
         </div>
 
         <div className="item__main">
-          <div className="item__main-flex">
-            {products.map((item, index) => (
-              <div
-                key={index}
-                className={`item__wrapper ${
-                  clickedIndex === index ? "clicked" : ""
-                }`}
-                onClick={() => handleImageClick(index, item.img)}
-              >
-                <Image src={item.img} alt={item.title} width={70} height={74} />
-              </div>
-            ))}
-          </div>
+          <div className="item__main-box">
+            <div className="item__main-flex">
+              {products.map((item, index) => (
+                <div
+                  key={index}
+                  className={`item__wrapper ${
+                    clickedIndex === index ? "clicked" : ""
+                  }`}
+                  onClick={() => handleImageClick(index, item.img)}
+                >
+                  <Image
+                    src={item.img}
+                    alt={item.title}
+                    width={70}
+                    height={74}
+                  />
+                </div>
+              ))}
+            </div>
 
-          <div className="item__block">
-            {activeImage ? (
-              <Zoom src={activeProduct.src} alt="Active product image" />
-            ) : (
-              <Zoom src={product.img.src} alt="Product image" />
-            )}
+            <div className="item__block">
+              {activeImage ? (
+                <Zoom src={activeProduct.src} alt="Active product image" />
+              ) : (
+                <Zoom src={product.img.src} alt="Product image" />
+              )}
+            </div>
           </div>
 
           <div className="item__block-right">
@@ -343,9 +350,7 @@ const Detail = () => {
           </div>
         </div>
 
-        <span className="category__select">
-          Новые колекции <MdOutlineKeyboardArrowRight />
-        </span>
+        <Text text={"Новые колекции"} />
         <ul className="category__ul">
           {products.map((item, index) => (
             <li key={index} className="category__list">
@@ -364,7 +369,12 @@ const Detail = () => {
                 </div>
                 <span className="category__text">New</span>
                 <h3 className="category__title">{item.title}</h3>
-                <span className="category__price"> {item.price}</span>
+                <span className="category__price">
+                  {item.price}
+                  <button className="category__hidden-btn">
+                    <Shopping />
+                  </button>
+                </span>
               </Link>
 
               <div
