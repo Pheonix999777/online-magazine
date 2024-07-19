@@ -126,20 +126,6 @@
   padding-top: 120px;
 }
 
-@media screen and (max-width: 960px) {
-  .category {
-    &.scroll {
-      padding-top: 50px;
-    }
-  }
-
-  .category__flex {
-    &.sticky {
-      top: 200px;
-    }
-  }
-}
-
 @media screen and (max-width: 425px) {
   .category__bottom {
     padding-top: 71px;

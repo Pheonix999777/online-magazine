@@ -306,11 +306,8 @@
     justify-content: space-between;
     margin-left: 0;
     gap: 20px;
-    margin-top: 30px;
+    margin-top: 20px;
     padding-right: 20px;
-    &.sticky {
-      margin-top: 150px;
-    }
   }
 
   .header__bottom-right {
@@ -320,16 +317,12 @@
     width: 100%;
     z-index: 60;
     background-color: $light;
-    &.sticky {
-      position: fixed;
-      top: 80px;
-      padding: 20px 20px;
-    }
   }
 
   .header__bottom {
     &.sticky {
       position: static;
+      padding: 0;
     }
   }
 
@@ -367,13 +360,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 14px 20px 40px 20px;
+    padding: 14px 20px 30px 20px;
     background-color: $light;
-    &.sticky {
-      position: fixed;
-      top: 0;
-      z-index: 100;
-    }
   }
 
   .header__mobile-btn {

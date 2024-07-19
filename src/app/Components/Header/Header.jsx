@@ -16,8 +16,6 @@ import { category, navbar } from "@/app/utils/data";
 export default function Header() {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [isSticky, setSticky] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(200);
-  const [mobile, setMobile] = useState(true);
 
   const LikeCarts = useSelector((state) => state.cart.item);
   const cart = useSelector((state) => state.add.item);
@@ -30,30 +28,17 @@ export default function Header() {
     }
   };
 
-  const changeMobile = () => {
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > lastScrollY) {
-      setMobile(false);
-    } else {
-      setMobile(true);
-    }
-
-    setLastScrollY(currentScrollY);
-  };
-
   const handleSearchClick = () => {
     setIsInputVisible(!isInputVisible);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
-    window.addEventListener("scroll", changeMobile);
+
     return () => {
       window.removeEventListener("scroll", changeBackground);
-      window.removeEventListener("scroll", changeMobile);
     };
-  }, [lastScrollY]);
+  }, []);
 
   return (
     <header className="header">
@@ -82,7 +67,7 @@ export default function Header() {
               Get it
             </a>
 
-            <div className={`header__content ${mobile ? "sticky" : ""}`}>
+            <div className="header__content">
               {category.map((item, index) => (
                 <div key={index} className="header__downMenu">
                   <button className="header__downBtn">{item.label}</button>
@@ -188,7 +173,7 @@ export default function Header() {
               </Link>
             </div>
 
-            <div className={`header__bottom-right ${mobile ? "sticky" : ""}`}>
+            <div className="header__bottom-right">
               <div
                 className={
                   isInputVisible
@@ -243,7 +228,7 @@ export default function Header() {
                 </button>
               </div>
             </div>
-            <div className={`header__mobile-flex ${mobile ? "sticky" : ""}`}>
+            <div className="header__mobile-flex">
               <a className="header__short-logo" href="/">
                 Get it
               </a>
