@@ -189,15 +189,6 @@ export default function Header() {
             </div>
 
             <div className={`header__bottom-right ${mobile ? "sticky" : ""}`}>
-              <div className="header__mobile-flex">
-                <a className="header__short-logo" href="/">
-                  Get it
-                </a>
-                <button className="header__mobile-btn">
-                  <Menu />
-                  <User />
-                </button>
-              </div>
               <div
                 className={
                   isInputVisible
@@ -251,6 +242,15 @@ export default function Header() {
                   Войти
                 </button>
               </div>
+            </div>
+            <div className={`header__mobile-flex ${mobile ? "sticky" : ""}`}>
+              <a className="header__short-logo" href="/">
+                Get it
+              </a>
+              <button className="header__mobile-btn">
+                <Menu />
+                <User />
+              </button>
             </div>
           </div>
         </Container>
