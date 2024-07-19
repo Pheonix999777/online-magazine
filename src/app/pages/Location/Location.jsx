@@ -1,5 +1,4 @@
 import Container from "@/app/Components/Container/Container";
-import { FaAngleDoubleRight } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import Image from "next/image";
 import address from "../../../../public/Imiges/Ellipse 1105.png";

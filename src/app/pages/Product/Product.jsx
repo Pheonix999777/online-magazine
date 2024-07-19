@@ -1,47 +1,14 @@
 "use client";
 import Container from "@/app/Components/Container/Container";
 import "./styles.scss";
-import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
-import Img2 from "../../../../public/Imiges/image-removebg4.png";
-import Img3 from "../../../../public/Imiges/image-removebg1.png";
-import Img4 from "../../../../public/Imiges/image-removebg2.png";
-import Image from "next/image";
-import Shopping from "../../../../public/icons/shoppingbag.svg";
-import Link from "next/link";
-import Heart from "../../../../public/icons/heart.svg";
 import { useDispatch } from "react-redux";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import Text from "@/app/Components/Text/Text";
+import Products from "@/app/Components/Products/Products";
+import { products } from "@/app/utils/data";
 
 export default function Product() {
-  const products = [
-    {
-      id: 1,
-      img: Img,
-      title: "Худи для мальчика с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 2,
-      img: Img2,
-      title: "Куртка для девочки с утеплителем Fellex® ",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 3,
-      img: Img3,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 4,
-      img: Img4,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-  ];
-
   const dispatch = useDispatch();
 
   const handleAddLike = (productId) => {
@@ -68,44 +35,16 @@ export default function Product() {
         <Text text={"Топ бестселлеров "} />
         <ul className="product__ul">
           {products.map((item, index) => (
-            <li key={index} className="product__list">
-              <Link
-                className="product__link"
-                href={`/pages/categories/${item.id}`}
-              >
-                <div className="product__box">
-                  <Image
-                    className="product__box-img"
-                    src={item.img}
-                    alt=""
-                    width={252}
-                    height={252}
-                  />
-                </div>
-                <span className="product__text">New</span>
-                <h3 className="product__title">{item.title}</h3>
-                <span className="product__price">
-                  {item.price}
-                  <button className="product__hidden-btn">
-                    <Shopping />
-                  </button>
-                </span>
-              </Link>
-
-              <div
-                className="product__like"
-                onClick={() => handleAddLike(item.id)}
-              >
-                <Heart />
-              </div>
-              <button
-                className="product__card"
-                onClick={() => handleAddCart(item.id)}
-              >
-                <Shopping />
-                добавить в корзину
-              </button>
-            </li>
+            <Products
+              key={index}
+              Img={item.img}
+              condition={item.condition}
+              title={item.title}
+              price={item.price}
+              id={item.id}
+              AddLike={handleAddLike}
+              AddCart={handleAddCart}
+            />
           ))}
         </ul>
 
@@ -114,45 +53,16 @@ export default function Product() {
 
           <ul className="product__ul">
             {products.map((item, index) => (
-              <li key={index} className="product__list">
-                <Link
-                  className="product__link"
-                  href={`/pages/categories/${item.id}`}
-                >
-                  <div className="product__box">
-                    <Image
-                      className="product__box-img"
-                      src={item.img}
-                      alt=""
-                      width={252}
-                      height={252}
-                    />
-                  </div>
-                  <span className="product__text">New</span>
-                  <h3 className="product__title">{item.title}</h3>
-                  <span className="product__price">
-                    {item.price}
-                    <button className="product__hidden-btn">
-                      <Shopping />
-                    </button>
-                  </span>
-                </Link>
-
-                <div
-                  className="product__like"
-                  onClick={() => handleAddLike(item.id)}
-                >
-                  <Heart />
-                </div>
-
-                <button
-                  className="product__card"
-                  onClick={() => handleAddCart(item.id)}
-                >
-                  <Shopping />
-                  добавить в корзину
-                </button>
-              </li>
+              <Products
+                key={index}
+                Img={item.img}
+                condition={item.condition}
+                title={item.title}
+                price={item.price}
+                id={item.id}
+                AddLike={handleAddLike}
+                AddCart={handleAddCart}
+              />
             ))}
           </ul>
         </div>

@@ -1,9 +1,8 @@
 .hero {
   padding-top: 22px;
-}
-
-.hero__scroll {
-  padding-top: 75px;
+  &.scroll {
+    padding-top: 75px;
+  }
 }
 
 .hero__div {
@@ -103,7 +102,7 @@
 
 .hero__img {
   position: absolute;
-  right: calc(23%);
+  left: calc(50% + 120px);
   top: calc(50%);
 }
 
@@ -117,11 +116,10 @@
 
 @media screen and (max-width: 425px) {
   .hero {
-    padding-top: 32px;
-  }
-
-  .hero__scroll {
-    padding-top: 320px;
+    padding-top: 30px;
+    &.scroll {
+      padding-top: 20px;
+    }
   }
 
   .hero__box {

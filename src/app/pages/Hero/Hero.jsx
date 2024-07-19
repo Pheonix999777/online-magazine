@@ -2,7 +2,6 @@
 import React, { useEffect, useState } from "react";
 import Container from "@/app/Components/Container/Container";
 import Image from "next/image";
-import Img from "../../../../public/Imiges/pngwing 1.png";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -11,32 +10,10 @@ import "swiper/css/pagination";
 import "./styles.scss";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
 import Photo from "../../../../public/Imiges/photo.png";
+import { images } from "@/app/utils/data";
 
 const Hero = () => {
   const [scroll, setScroll] = useState(false);
-
-  const images = [
-    {
-      img: Img,
-      title: "Jackets for all kinds of deseases ",
-      text: "Clothing is typically made of fabrics",
-    },
-    {
-      img: Img,
-      title: "Jackets for all kinds of deseases",
-      text: "Clothing is typically made of fabrics",
-    },
-    {
-      img: Img,
-      title: "Jackets for all kinds of deseases",
-      text: "Clothing is typically made of fabrics",
-    },
-    {
-      img: Img,
-      title: "Jackets for all kinds of deseases",
-      text: "Clothing is typically made of fabrics",
-    },
-  ];
 
   const changeBackground = () => {
     if (window.scrollY >= 90) {
@@ -54,7 +31,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className={`hero ${scroll ? "hero__scroll" : ""}`}>
+    <section className={`hero ${scroll ? "scroll" : ""}`}>
       <Container>
         <div className="hero__box">
           <Swiper

@@ -10,30 +10,17 @@ import Bag from "../../../../public/icons/Bag.svg";
 import User from "../../../../public/icons/user.svg";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import Menu from "../../../../public/icons/menu.svg";
+import { category, navbar } from "@/app/utils/data";
 
 export default function Header() {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(200);
+  const [mobile, setMobile] = useState(true);
 
   const LikeCarts = useSelector((state) => state.cart.item);
   const cart = useSelector((state) => state.add.item);
-
-  const navbar = [
-    { href: "/pages/error", label: "О магазине" },
-    { href: "/pages/error", label: "Доставка и оплата" },
-    { href: "/pages/error", label: "Политика безопасности" },
-    { href: "/pages/error", label: "Условия соглашения" },
-    { href: "/pages/error", label: "Публичная оферта" },
-    { href: "/pages/error", label: "Наши гарантии" },
-  ];
-
-  const category = [
-    { label: "мальчики" },
-    { label: "девочки" },
-    { label: "младенцы" },
-  ];
 
   const changeBackground = () => {
     if (window.scrollY >= 90) {
@@ -43,16 +30,30 @@ export default function Header() {
     }
   };
 
+  const changeMobile = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > lastScrollY) {
+      setMobile(false);
+    } else {
+      setMobile(true);
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
   const handleSearchClick = () => {
     setIsInputVisible(!isInputVisible);
   };
 
   useEffect(() => {
     window.addEventListener("scroll", changeBackground);
+    window.addEventListener("scroll", changeMobile);
     return () => {
       window.removeEventListener("scroll", changeBackground);
+      window.removeEventListener("scroll", changeMobile);
     };
-  }, []);
+  }, [lastScrollY]);
 
   return (
     <header className="header">
@@ -76,110 +77,112 @@ export default function Header() {
             <a className="header__logo" href="/">
               Get it
             </a>
-            <div className="header__content">
-              {category.map((item, index) => (
-                <div key={index} className="header__downMenu">
-                  <button className="header__downBtn">{item.label}</button>
-                  <div className="header__menu">
-                    <div className="header__megaMenu">
-                      <ul className="header__menu-ul">
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            брюки
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            обуви
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            шапки
-                          </Link>
-                        </li>
-                      </ul>
+            <div className={`header__content-box ${mobile ? "active" : ""}`}>
+              <div className="header__content">
+                {category.map((item, index) => (
+                  <div key={index} className="header__downMenu">
+                    <button className="header__downBtn">{item.label}</button>
+                    <div className="header__menu">
+                      <div className="header__megaMenu">
+                        <ul className="header__menu-ul">
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              брюки
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              обуви
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              шапки
+                            </Link>
+                          </li>
+                        </ul>
 
-                      <ul className="header__menu-ul">
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            финки
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            женщины
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            куртки
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            футболки
-                          </Link>
-                        </li>
-                      </ul>
+                        <ul className="header__menu-ul">
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              финки
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              женщины
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              куртки
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              футболки
+                            </Link>
+                          </li>
+                        </ul>
 
-                      <ul className="header__menu-ul">
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            шорты
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            свитеры
-                          </Link>
-                        </li>
-                        <li className="header__menu-list">
-                          <Link
-                            className="header__menu-link"
-                            href={"/pages/categories"}
-                          >
-                            аккесуары
-                          </Link>
-                        </li>
-                      </ul>
+                        <ul className="header__menu-ul">
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              шорты
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              свитеры
+                            </Link>
+                          </li>
+                          <li className="header__menu-list">
+                            <Link
+                              className="header__menu-link"
+                              href={"/pages/categories"}
+                            >
+                              аккесуары
+                            </Link>
+                          </li>
+                        </ul>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
 
-              <Link href={"/pages/categories"} className="header__category">
-                <CgMenuGridO style={{ marginRight: "2px" }} />
-                <span className="header__full-text">все категории</span>
-                <span className="header__short-text">все</span>
-              </Link>
+                <Link href={"/pages/categories"} className="header__category">
+                  <CgMenuGridO style={{ marginRight: "2px" }} />
+                  <span className="header__full-text">все категории</span>
+                  <span className="header__short-text">все</span>
+                </Link>
+              </div>
             </div>
 
             <div className="header__bottom-right">

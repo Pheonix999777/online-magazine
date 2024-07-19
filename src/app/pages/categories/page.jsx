@@ -1,20 +1,14 @@
 "use client";
 import Container from "@/app/Components/Container/Container";
-import Img from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
-import Img2 from "../../../../public/Imiges/image-removebg4.png";
-import Img3 from "../../../../public/Imiges/image-removebg1.png";
-import Img4 from "../../../../public/Imiges/image-removebg2.png";
-import Image from "next/image";
 import { RiArrowDownSLine } from "react-icons/ri";
-import Link from "next/link";
-import Shopping from "../../../../public/icons/shoppingbag.svg";
 import "./styles.scss";
 import { useEffect, useState, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
-import Heart from "../../../../public/icons/heart.svg";
 import Text from "@/app/Components/Text/Text";
+import Products from "@/app/Components/Products/Products";
+import { products } from "@/app/utils/data";
 
 export default function Categories() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -30,33 +24,6 @@ export default function Categories() {
     { title: "Сезонность", text: "не выбрана", label: "Blue" },
     { title: "Страна", text: "не выбрана", label: "Blue" },
   ]);
-
-  const products = [
-    {
-      id: 1,
-      img: Img,
-      title: "Худи для мальчика с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 2,
-      img: Img2,
-      title: "Куртка для девочки с утеплителем Fellex® ",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 3,
-      img: Img3,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-    {
-      id: 4,
-      img: Img4,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-    },
-  ];
 
   const handleChange = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -138,56 +105,57 @@ export default function Categories() {
     <section className={`category ${scroll ? "scroll" : ""}`}>
       <div className={`category__flex ${isSticky ? "sticky" : ""}`}>
         <Container>
-          <div className="category__wrapper">
-            {data.map((item, index) => (
-              <div
-                key={index}
-                className="category__words"
-                ref={(el) => (dropdownRef.current[index] = el)}
-              >
-                {item.title}:
-                <span
-                  onClick={() => handleChange(index)}
-                  className="category__spn"
+          <div className="category__flex-hidden">
+            <div className="category__wrapper">
+              {data.map((item, index) => (
+                <div
+                  key={index}
+                  className="category__words"
+                  ref={(el) => (dropdownRef.current[index] = el)}
                 >
-                  {item.text}
-                  <RiArrowDownSLine
-                    style={{
-                      marginRight: "5px",
-                      color: "#333",
-                      marginLeft: "5px",
-                    }}
-                  />
-                </span>
-                {openIndex === index && (
-                  <ul className="category__selected">
-                    <li className="category__option">
-                      <button
-                        onClick={() => handleOptionClick(index, item.label)}
-                        className="category__option-btn"
-                      >
-                        {item.label}
-                      </button>
-                    </li>
-                    <li className="category__option">
-                      <button
-                        onClick={() => handleOptionClick(index, item.label)}
-                        className="category__option-btn"
-                      >
-                        {item.label}
-                      </button>
-                    </li>
-                  </ul>
-                )}
+                  {item.title}:
+                  <span
+                    onClick={() => handleChange(index)}
+                    className="category__spn"
+                  >
+                    {item.text}
+                    <RiArrowDownSLine
+                      style={{
+                        marginRight: "5px",
+                        color: "#333",
+                        marginLeft: "5px",
+                      }}
+                    />
+                  </span>
+                  {openIndex === index && (
+                    <ul className="category__selected">
+                      <li className="category__option">
+                        <button
+                          onClick={() => handleOptionClick(index, item.label)}
+                          className="category__option-btn"
+                        >
+                          {item.label}
+                        </button>
+                      </li>
+                      <li className="category__option">
+                        <button
+                          onClick={() => handleOptionClick(index, item.label)}
+                          className="category__option-btn"
+                        >
+                          {item.label}
+                        </button>
+                      </li>
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+            <div className="category__flex-box">
+              <div className="category__words">
+                Страна:
+                <span className="category__span">По возрастанию цен</span>
+                <RiArrowDownSLine style={{ fill: "#297EFF" }} />
               </div>
-            ))}
-          </div>
-
-          <div className="category__flex-box">
-            <div className="category__words">
-              Страна:
-              <span className="category__span">По возрастанию цен</span>
-              <RiArrowDownSLine style={{ fill: "#297EFF" }} />
             </div>
           </div>
         </Container>
@@ -196,94 +164,36 @@ export default function Categories() {
       <Container>
         <Text text={"Топ бестселлеров"} />
 
-        <ul className="category__ul">
+        <ul className="product__ul">
           {products.map((item, index) => (
-            <li key={index} className="category__list">
-              <Link
-                className="category__link"
-                href={`/pages/categories/${item.id}`}
-              >
-                <div className="category__box">
-                  <Image
-                    className="category__box-img"
-                    src={item.img}
-                    alt="Блузка для девочки"
-                    width={252}
-                    height={252}
-                  />
-                </div>
-                <span className="category__text">New</span>
-                <h3 className="category__title">{item.title}</h3>
-                <span className="category__price">
-                  {item.price}
-                  <button className="category__hidden-btn">
-                    <Shopping />
-                  </button>
-                </span>
-              </Link>
-
-              <div
-                className="category__like"
-                onClick={() => handleAddLike(item.id)}
-              >
-                <Heart />
-              </div>
-
-              <button
-                className="category__card"
-                onClick={() => handleAddCart(item.id)}
-              >
-                <Shopping />
-                добавить в корзину
-              </button>
-            </li>
+            <Products
+              key={index}
+              Img={item.img}
+              condition={item.condition}
+              title={item.title}
+              price={item.price}
+              id={item.id}
+              AddLike={handleAddLike}
+              AddCart={handleAddCart}
+            />
           ))}
         </ul>
 
         <div className="category__bottom">
           <Text text={"Новые колекции"} />
 
-          <ul className="category__ul">
+          <ul className="product__ul">
             {products.map((item, index) => (
-              <li key={index} className="category__list">
-                <Link
-                  className="category__link"
-                  href={`/pages/categories/${item.id}`}
-                >
-                  <div className="category__box">
-                    <Image
-                      className="category__box-img"
-                      src={item.img}
-                      alt="Блузка для девочки"
-                      width={252}
-                      height={252}
-                    />
-                  </div>
-                  <span className="category__text">New</span>
-                  <h3 className="category__title">{item.title}</h3>
-                  <span className="category__price">
-                    {item.price}
-                    <button className="category__hidden-btn">
-                      <Shopping />
-                    </button>
-                  </span>
-                </Link>
-
-                <div
-                  className="category__like"
-                  onClick={() => handleAddLike(item.id)}
-                >
-                  <Heart />
-                </div>
-
-                <button
-                  className="category__card"
-                  onClick={() => handleAddCart(item.id)}
-                >
-                  <Shopping />
-                  добавить в корзину
-                </button>
-              </li>
+              <Products
+                key={index}
+                Img={item.img}
+                condition={item.condition}
+                title={item.title}
+                price={item.price}
+                id={item.id}
+                AddLike={handleAddLike}
+                AddCart={handleAddCart}
+              />
             ))}
           </ul>
         </div>

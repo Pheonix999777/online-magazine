@@ -1,23 +1,18 @@
 "use client";
 import Container from "@/app/Components/Container/Container";
-import Img from "../../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
-import Img2 from "../../../../../public/Imiges/image-removebg4.png";
-import Img3 from "../../../../../public/Imiges/image-removebg1.png";
-import Img4 from "../../../../../public/Imiges/image-removebg2.png";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import "./styles.scss";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import Asd from "../../../../../public/icons/asd.svg";
-import Shopping from "../../../../../public/icons/shoppingbag.svg";
 import Zoom from "@/app/Components/ImageInnerZoom/ImageInnerZoom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/store/Slices/Add.Slices";
 import { addCart } from "@/app/store/Slices/Cart.Slices";
-import Heart from "../../../../../public/icons/heart.svg";
 import Text from "@/app/Components/Text/Text";
+import Products from "@/app/Components/Products/Products";
+import { numbers, products, Records, tabs, Titles } from "@/app/utils/data";
 
 const Detail = () => {
   const params = useParams();
@@ -30,66 +25,6 @@ const Detail = () => {
   const [active, setActive] = useState();
 
   const [scroll, setScroll] = useState(false);
-
-  const products = [
-    {
-      id: 1,
-      img: Img,
-      title: "Худи для мальчика с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-      change: Img,
-      new: true,
-    },
-    {
-      id: 2,
-      img: Img2,
-      title: "Куртка для девочки с утеплителем Fellex® ",
-      price: "7 000 000 so’m",
-      change: Img2,
-      new: false,
-    },
-    {
-      id: 3,
-      img: Img3,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-      change: Img3,
-      new: true,
-    },
-    {
-      id: 4,
-      img: Img4,
-      title: "Блузка для девочки с утеплителем Fellex®",
-      price: "7 000 000 so’m",
-      change: Img4,
-      new: true,
-    },
-  ];
-
-  const numbers = [
-    {
-      num: "2M / 56",
-    },
-    {
-      num: "3M / 62",
-    },
-    {
-      num: "6M / 68",
-    },
-  ];
-
-  const tabs = [
-    {
-      name: "Описание",
-      content: " Вес ковра",
-      text: "Высота ворса (мм.)",
-      label: "Плотность по основе",
-      word: "Плотность по утку",
-      new: "плотность ворса",
-    },
-    { name: "Наличие", content: " Высота ворса (мм.)" },
-    { name: "Доставка и оплата", content: " Плотность по основе" },
-  ];
 
   const [activeImage, setActiveImage] = useState(false);
   const [activeProduct, setActiveProduct] = useState(products[0]);
@@ -144,35 +79,14 @@ const Detail = () => {
     <section className={`item ${scroll ? "scroll" : ""}`}>
       <Container>
         <div className="item__flex">
-          <span className="item__line">
-            Главная
-            <RiArrowRightSLine
-              style={{ marginLeft: "5px", marginRight: "5px" }}
-            />
-          </span>
-
-          <span className="item__line">
-            Детям
-            <RiArrowRightSLine
-              style={{ marginLeft: "5px", marginRight: "5px" }}
-            />
-          </span>
-
-          <span className="item__line">
-            Девочкам
-            <RiArrowRightSLine
-              style={{ marginLeft: "5px", marginRight: "5px" }}
-            />
-          </span>
-
-          <span className="item__line">
-            Платья
-            <RiArrowRightSLine
-              style={{ marginLeft: "5px", marginRight: "5px" }}
-            />
-          </span>
-
-          <span className="item__line">Платье Rare Edition</span>
+          {Titles.map((item, index) => (
+            <span key={index} className="item__line">
+              {item.title}
+              <RiArrowRightSLine
+                style={{ marginLeft: "5px", marginRight: "5px" }}
+              />
+            </span>
+          ))}
         </div>
 
         <div className="item__main">
@@ -233,53 +147,15 @@ const Detail = () => {
             </div>
 
             <div className="item__div">
-              <span className="item__div-flex">
-                Состав{" "}
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>100% полиэстер</p>{" "}
-              </span>
-
-              <span className="item__div-flex">
-                Комплектация{" "}
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>Платье с трусиками</p>{" "}
-              </span>
-
-              <span className="item__div-flex">
-                Длина юбки
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>платьямиди</p>{" "}
-              </span>
-
-              <span className="item__div-flex">
-                Страна бренда{" "}
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>США</p>{" "}
-              </span>
-
-              <span className="item__div-flex">
-                Цвет{" "}
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>розовый</p>{" "}
-              </span>
-
-              <span className="item__div-flex">
-                Вид застежкимолния
-                <p style={{ marginLeft: "10px", marginRight: "10px" }}>
-                  ...................
-                </p>{" "}
-                <p>Молния</p>{" "}
-              </span>
+              {Records.map((record, index) => (
+                <span key={index} className="item__div-flex">
+                  {record.label}
+                  <p style={{ marginLeft: "10px", marginRight: "10px" }}>
+                    {record.points}
+                  </p>
+                  <p>{record.text}</p>
+                </span>
+              ))}
             </div>
           </div>
         </div>
@@ -351,47 +227,18 @@ const Detail = () => {
         </div>
 
         <Text text={"Новые колекции"} />
-        <ul className="category__ul">
+        <ul className="product__ul">
           {products.map((item, index) => (
-            <li key={index} className="category__list">
-              <Link
-                className="category__link"
-                href={`/pages/categories/${item.id}`}
-              >
-                <div className="category__box">
-                  <Image
-                    className="category__box-img"
-                    src={item.img}
-                    alt="Блузка для девочки"
-                    width={252}
-                    height={252}
-                  />
-                </div>
-                <span className="category__text">New</span>
-                <h3 className="category__title">{item.title}</h3>
-                <span className="category__price">
-                  {item.price}
-                  <button className="category__hidden-btn">
-                    <Shopping />
-                  </button>
-                </span>
-              </Link>
-
-              <div
-                className="category__like"
-                onClick={() => handleAddLike(item.id)}
-              >
-                <Heart />
-              </div>
-
-              <button
-                className="category__card"
-                onClick={() => handleAddCart(item.id)}
-              >
-                <Shopping />
-                добавить в корзину
-              </button>
-            </li>
+            <Products
+              key={index}
+              Img={item.img}
+              condition={item.condition}
+              title={item.title}
+              price={item.price}
+              id={item.id}
+              AddLike={handleAddLike}
+              AddCart={handleAddCart}
+            />
           ))}
         </ul>
       </Container>

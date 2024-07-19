@@ -1,7 +1,6 @@
 import Container from "@/app/Components/Container/Container";
 import "./styles.scss";
 import Marquee from "react-fast-marquee";
-import Img from "../../../../public/Imiges/Ellipse 895.png";
 import Image from "next/image";
 import Logo from "../../../../public/Imiges/image 221.png";
 import Logo2 from "../../../../public/Imiges/image 220.png";
@@ -11,37 +10,9 @@ import Logo5 from "../../../../public/Imiges/image 216.png";
 import Logo6 from "../../../../public/Imiges/image 215.png";
 import Logo7 from "../../../../public/Imiges/image 214.png";
 import Logo8 from "../../../../public/Imiges/image 212.png";
+import { clients } from "@/app/utils/data";
 
 export default function Clients() {
-  const clients = [
-    {
-      text: "все товары есть в наличии на складе",
-      img: Img,
-      name: "Wade Warren",
-      model: "Электро-скутер",
-    },
-    {
-      text: "все товары есть в наличии на складе",
-      img: Img,
-      name: "Wade Warren",
-      model: "Электро-скутер",
-    },
-
-    {
-      text: "все товары есть в наличии на складе",
-      img: Img,
-      name: "Wade Warren",
-      model: "Электро-скутер",
-    },
-
-    {
-      text: "все товары есть в наличии на складе",
-      img: Img,
-      name: "Wade Warren",
-      model: "Электро-скутер",
-    },
-  ];
-
   const Logos = [
     {
       img: Logo,

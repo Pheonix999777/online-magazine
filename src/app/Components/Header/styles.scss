@@ -1,5 +1,6 @@
 .header {
   padding-top: 14px;
+  display: none;
 }
 
 .header__nav {
@@ -36,7 +37,6 @@
 .header__flex {
   display: flex;
   align-items: center;
-  flex-wrap: wrap;
 }
 
 .header__logo {
@@ -56,6 +56,10 @@
   border: 1px solid #eee;
   padding: 4px 4px 4px 4px;
   margin-left: 35px;
+}
+
+.header__bottom-flex {
+  margin-left: auto;
 }
 
 .header__downMenu {
@@ -192,17 +196,6 @@
   margin-right: 20px;
 }
 
-.header__input-container {
-  width: 0;
-  overflow: hidden;
-  transition: width 0.5s ease;
-}
-
-.header__input-container.visible {
-  width: 100%;
-  max-width: 200px;
-}
-
 .header__input {
   width: 0;
   overflow: hidden;
@@ -213,7 +206,7 @@
   padding-right: 5px;
   &.visible {
     width: 100%;
-    max-width: 200px;
+    max-width: 180px;
   }
 }
 .header__input::placeholder {
@@ -231,6 +224,38 @@
   text-decoration: none;
 }
 
+@media screen and (max-width: 1260px) {
+  .header__flex {
+    flex-direction: column-reverse;
+  }
+
+  .header__logo {
+    display: none;
+  }
+
+  .header__bottom-right {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .header__content {
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-left: 0;
+    margin-top: 32px;
+    gap: 20px;
+    padding-right: 8px;
+  }
+
+  .header__category {
+    margin-left: 0;
+  }
+
+  .header__login {
+    display: none;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .header__nav {
     display: none;
@@ -240,17 +265,8 @@
 @media screen and (max-width: 425px) {
   .header__bottom {
     &.sticky {
-      position: fixed;
-      top: 0;
+      position: static;
     }
-  }
-
-  .header__logo {
-    display: none;
-  }
-
-  .header__flex {
-    flex-direction: column-reverse;
   }
 
   .header__category {
@@ -263,18 +279,23 @@
     flex-direction: row-reverse;
     justify-content: space-between;
     margin-left: 0;
-    margin-top: 32px;
     gap: 20px;
     padding-right: 8px;
+    padding-top: 120px;
+  }
+
+  .header__bottom-right {
+    position: fixed;
+    top: 78px;
+    padding: 21px 0;
+    width: 100%;
+    z-index: 60;
+    background-color: $light;
   }
 
   .header__downBtn {
     font-size: 11px;
     padding: 0;
-  }
-
-  .header__bottom-right {
-    margin-left: 0;
   }
 
   .header__search-container {
@@ -283,10 +304,6 @@
 
   .header__actions:not(:first-child) {
     margin-left: 40px;
-  }
-
-  .header__login {
-    display: none;
   }
 
   .header__full-text {
@@ -299,10 +316,16 @@
 
   .header__mobile-flex {
     width: 100%;
+    max-width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 40px;
+    padding: 20px 16px 15px 16px;
+    position: fixed;
+    top: 0;
+    z-index: 60;
+    background-color: $light;
   }
 
   .header__mobile-btn {

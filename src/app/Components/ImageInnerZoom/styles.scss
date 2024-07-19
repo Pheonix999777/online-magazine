@@ -20,6 +20,12 @@
   --zoom: 2;
 }
 
+@media screen and (max-width: 1314px) {
+  .img {
+    position: relative;
+  }
+}
+
 @media screen and (max-width: 425px) {
   .image {
     width: 100%;
