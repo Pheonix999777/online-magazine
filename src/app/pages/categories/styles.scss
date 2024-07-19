@@ -11,7 +11,7 @@
   position: relative;
   &.sticky {
     position: sticky;
-    top: 78px;
+    top: 120px;
     z-index: 40;
   }
 }
@@ -30,7 +30,7 @@
 
 .category__wrapper {
   display: inline-flex;
-  gap: 24px;
+  gap: 20px;
   border-radius: 2px;
   border: 1px solid #e4e4e4;
   border-radius: 62px;
@@ -126,14 +126,21 @@
   padding-top: 120px;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 960px) {
   .category {
-    padding-bottom: 120px;
     &.scroll {
-      padding-top: 320px;
+      padding-top: 50px;
     }
   }
 
+  .category__flex {
+    &.sticky {
+      top: 200px;
+    }
+  }
+}
+
+@media screen and (max-width: 425px) {
   .category__bottom {
     padding-top: 71px;
   }

@@ -52,7 +52,7 @@ export default function Categories() {
   };
 
   const changeSection = () => {
-    if (window.scrollY >= 90) {
+    if (window.scrollY >= 200) {
       setScroll(true);
     } else {
       setScroll(false);

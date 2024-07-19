@@ -1,14 +1,15 @@
 .image {
   position: relative;
-  width: 500px;
+  width: 100%;
   height: 100%;
   overflow: hidden;
 }
 
 .img {
-  position: absolute;
-  width: 100%;
+  position: relative;
+  width: 611px;
   height: 100%;
+  padding: 30px 78px;
   object-fit: cover;
   transform: scale(var(--zoom, 1));
   transform-origin: var(--x) var(--y);
@@ -20,19 +21,23 @@
   --zoom: 2;
 }
 
-@media screen and (max-width: 1314px) {
+.item__block {
+  padding: 0;
+}
+
+@media screen and (max-width: 1060px) {
   .img {
-    position: relative;
+    padding: 30px 30px;
   }
 }
 
-@media screen and (max-width: 425px) {
-  .image {
-    width: 100%;
-    max-width: 280px;
-  }
+// @media screen and (max-width: 425px) {
+//   .image {
+//     width: 100%;
+//     max-width: 280px;
+//   }
 
-  .img {
-    position: relative;
-  }
-}
+//   .img {
+//     position: relative;
+//   }
+// }

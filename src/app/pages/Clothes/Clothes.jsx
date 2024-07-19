@@ -103,7 +103,7 @@ export default function Clothes() {
           <div className="clothes__product-bottom">
             <div className="clothes__product-text">
               <span className="clothes__text">364 одежд</span>
-              <h3 className="clothes__subname">Одежды для мальчиков</h3>
+              <h3 className="clothes__subname">Одежды для мальчиков </h3>
               <span className="clothes__price-text">от 60 000 uzs</span>
               <div className="clothes__product-wrapper">
                 <Link href={"#"} className="clothes__btn">

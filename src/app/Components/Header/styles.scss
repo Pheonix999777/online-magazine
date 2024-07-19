@@ -1,9 +1,10 @@
 .header {
   padding-top: 14px;
-  display: none;
 }
 
 .header__nav {
+  display: flex;
+  align-items: center;
   padding-left: 10px;
   margin-bottom: 25px;
 }
@@ -163,6 +164,11 @@
   @include style-btn;
 }
 
+.header__hidden-search {
+  @include style-btn;
+  display: none;
+}
+
 .header__actions-number {
   color: $orange;
   font-size: 16px;
@@ -177,11 +183,18 @@
   margin-left: 36px;
 }
 
+.header__hidden-login {
+  padding: 13px 23px;
+  @include reset-btn;
+  margin-left: auto;
+  display: none;
+}
+
 .header__search-container {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  margin-right: 40px;
+  margin-right: 0;
   border: 1px solid transparent;
 }
 
@@ -209,8 +222,13 @@
     max-width: 180px;
   }
 }
+
 .header__input::placeholder {
   color: #33333366;
+}
+
+.header__hidden-inp {
+  display: none;
 }
 
 .header__mobile-flex {
@@ -224,45 +242,91 @@
   text-decoration: none;
 }
 
-@media screen and (max-width: 1260px) {
-  .header__flex {
-    flex-direction: column-reverse;
-  }
-
-  .header__logo {
-    display: none;
-  }
-
-  .header__bottom-right {
-    justify-content: center;
-    margin-left: 0;
-  }
-
+@media screen and (max-width: 1255px) {
   .header__content {
-    flex-direction: row-reverse;
-    justify-content: center;
-    margin-left: 0;
-    margin-top: 32px;
-    gap: 20px;
-    padding-right: 8px;
-  }
-
-  .header__category {
-    margin-left: 0;
+    max-width: 520px;
+    gap: 5px;
   }
 
   .header__login {
     display: none;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .header__nav {
-    display: none;
+  .header__hidden-login {
+    display: block;
+  }
+
+  .header__actions-visible {
+    padding: 10px 15px;
+    margin-right: 0;
+  }
+
+  .header__input {
+    &.visible {
+      max-width: 140px;
+    }
   }
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1100px) {
+  .header__content {
+    max-width: 450px;
+    gap: 5px;
+    margin-left: 20px;
+  }
+
+  .header__downBtn {
+    padding: 11px;
+  }
+
+  .header__actions {
+    &:not(:first-child) {
+      margin-left: 25px;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .header__nav {
+    display: none;
+  }
+
+  .header__hidden-search {
+    display: block;
+  }
+
+  .header__flex {
+    flex-direction: column-reverse;
+  }
+
+  .header__content {
+    width: 100%;
+    max-width: 500px;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    margin-left: 0;
+    gap: 20px;
+    margin-top: 20px;
+    padding-right: 20px;
+    &.sticky {
+      margin-top: 150px;
+    }
+  }
+
+  .header__bottom-right {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0 21px 0;
+    width: 100%;
+    z-index: 60;
+    background-color: $light;
+    &.sticky {
+      position: fixed;
+      top: 0;
+      padding: 20px 20px;
+    }
+  }
+
   .header__bottom {
     &.sticky {
       position: static;
@@ -275,24 +339,6 @@
     margin-left: 0;
   }
 
-  .header__content {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-left: 0;
-    gap: 20px;
-    padding-right: 8px;
-    padding-top: 120px;
-  }
-
-  .header__bottom-right {
-    position: fixed;
-    top: 78px;
-    padding: 21px 0;
-    width: 100%;
-    z-index: 60;
-    background-color: $light;
-  }
-
   .header__downBtn {
     font-size: 11px;
     padding: 0;
@@ -300,6 +346,7 @@
 
   .header__search-container {
     margin-right: 40px;
+    display: none;
   }
 
   .header__actions:not(:first-child) {
@@ -316,15 +363,10 @@
 
   .header__mobile-flex {
     width: 100%;
-    max-width: 400px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 40px;
-    padding: 20px 16px 15px 16px;
-    position: fixed;
-    top: 0;
-    z-index: 60;
+    padding: 0 0 40px 0;
     background-color: $light;
   }
 
@@ -332,5 +374,22 @@
     @include reset-btn;
     padding: 11px 16px;
     gap: 29px;
+  }
+
+  .header__login {
+    display: none;
+  }
+
+  .header__logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 425px) {
+  .header__content {
+    padding-right: 8px;
   }
 }
