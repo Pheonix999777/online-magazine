@@ -101,11 +101,57 @@ export default function Categories() {
     );
   };
 
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    const container = scrollContainerRef.current;
+
+    let isDragging = false;
+    let startX;
+    let scrollLeft;
+
+    const handleMouseDown = (e) => {
+      if (e.button !== 0) return; // Ensure it's the left mouse button
+
+      // Only start dragging if the click is within the container
+      if (!container.contains(e.target)) return;
+
+      isDragging = true;
+      startX = e.pageX - container.offsetLeft;
+      scrollLeft = container.scrollLeft;
+      container.style.cursor = "grabbing";
+    };
+
+    const handleMouseMove = (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      const x = e.pageX - container.offsetLeft;
+      const scroll = x - startX;
+      container.scrollLeft = scrollLeft - scroll;
+    };
+
+    const handleMouseUp = () => {
+      if (!isDragging) return;
+      isDragging = false;
+      container.style.cursor = "grab";
+    };
+
+    container.addEventListener("mousedown", handleMouseDown);
+    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("mouseup", handleMouseUp);
+
+    return () => {
+      container.removeEventListener("mousedown", handleMouseDown);
+      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("mouseup", handleMouseUp);
+    };
+  }, []);
+
   return (
     <section className={`category ${scroll ? "scroll" : ""}`}>
       <div className={`category__flex ${isSticky ? "sticky" : ""}`}>
         <Container>
-          <div className="category__flex-hidden">
+          <div className="category__flex-hidden" ref={scrollContainerRef}>
             <div className="category__wrapper">
               {data.map((item, index) => (
                 <div
