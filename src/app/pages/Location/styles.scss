@@ -48,10 +48,9 @@
   @include reset-btn;
   padding: 13px 23px;
   margin-top: 24px;
-  display: flex;
-  align-items: center;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
 }
 
 .location__btn-icon {

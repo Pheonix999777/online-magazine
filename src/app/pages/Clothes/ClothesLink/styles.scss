@@ -1,0 +1,36 @@
+.clothes__btn {
+  color: $black-color;
+  font-size: 14px;
+  background-color: transparent;
+  line-height: 108.5%;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.clothes__btn-icon {
+  display: inline-flex;
+  margin-right: 5px;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.clothes__btn-new-icon {
+  display: inline-flex;
+  position: absolute;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  margin-right: 8px;
+}
+
+.clothes__btn:hover .clothes__btn-icon {
+  transform: translateX(250%);
+  opacity: 0;
+}
+
+.clothes__btn:hover .clothes__btn-new-icon {
+  transform: translateX(10%);
+}

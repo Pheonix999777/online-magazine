@@ -20,7 +20,7 @@ export default function Location() {
                 Обращайтесь в магазин, мы поможем решить ситуацию в вашу пользу.
               </h4>
 
-              <button className="location__btn">
+              <Link href={"#"} className="location__btn">
                 <span className="location__btn-icon">
                   <DubbleRight />
                 </span>
@@ -28,7 +28,7 @@ export default function Location() {
                   <DubbleRight />
                 </span>
                 Подробнее
-              </button>
+              </Link>
               <span className="location__text">наши социальные медии:</span>
 
               <div className="location__social-icons">

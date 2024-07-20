@@ -7,6 +7,7 @@ import Img2 from "../../../../public/Imiges/image-removebg-preview (33) 1.png";
 import Img3 from "../../../../public/Imiges/image-removebg-preview (27) 1 (1).png";
 import Img4 from "../../../../public/Imiges/image-removebg-preview (27) 1 (2).png";
 import DubbleRight from "../../../../public/icons/dubble-right.svg";
+import ClohtesLink from "./ClothesLink/ClothesLink";
 
 export default function Clothes() {
   return (
@@ -21,15 +22,7 @@ export default function Clothes() {
               </h2>
               <span className="clothes__price">от 60 000 uzs</span>
               <div className="clothes__link-box">
-                <Link href={"#"} className="clothes__btn">
-                  <span className="clothes__btn-icon">
-                    <DubbleRight />
-                  </span>
-                  <span className="clothes__btn-new-icon">
-                    <DubbleRight />
-                  </span>
-                  Подробнее
-                </Link>
+                <ClohtesLink link={"#"} text={"Подробнее"} />
               </div>
             </div>
 
@@ -49,15 +42,7 @@ export default function Clothes() {
               <h3 className="clothes__subname">Одежды для мальчиков </h3>
               <span className="clothes__price-text">от 60 000 uzs</span>
               <div className="clothes__product-wrapper">
-                <Link href={"#"} className="clothes__btn">
-                  <span className="clothes__btn-icon">
-                    <DubbleRight />
-                  </span>
-                  <span className="clothes__btn-new-icon">
-                    <DubbleRight />
-                  </span>
-                  Подробнее
-                </Link>
+                <ClohtesLink link={"#"} text={"Подробнее"} />
               </div>
             </div>
             <div className="clothes__img-box">
@@ -77,15 +62,7 @@ export default function Clothes() {
               <h3 className="clothes__subname">Одежды для мальчиков</h3>
               <span className="clothes__price-text">от 60 000 uzs</span>
               <div className="clothes__product-wrapper">
-                <Link href={"#"} className="clothes__btn">
-                  <span className="clothes__btn-icon">
-                    <DubbleRight />
-                  </span>
-                  <span className="clothes__btn-new-icon">
-                    <DubbleRight />
-                  </span>
-                  Подробнее
-                </Link>
+                <ClohtesLink link={"#"} text={"Подробнее"} />
               </div>
             </div>
 
@@ -106,15 +83,7 @@ export default function Clothes() {
               <h3 className="clothes__subname">Одежды для мальчиков </h3>
               <span className="clothes__price-text">от 60 000 uzs</span>
               <div className="clothes__product-wrapper">
-                <Link href={"#"} className="clothes__btn">
-                  <span className="clothes__btn-icon">
-                    <DubbleRight />
-                  </span>
-                  <span className="clothes__btn-new-icon">
-                    <DubbleRight />
-                  </span>
-                  Подробнее
-                </Link>
+                <ClohtesLink link={"#"} text={"Подробнее"} />
               </div>
             </div>
 

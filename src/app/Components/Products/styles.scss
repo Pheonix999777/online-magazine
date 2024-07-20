@@ -89,6 +89,10 @@
 }
 
 @media screen and (max-width: 960px) {
+  .product__ul {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
   .product__box {
     padding: 20px;
   }
