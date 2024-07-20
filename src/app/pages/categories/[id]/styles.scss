@@ -192,12 +192,18 @@
 }
 
 @media screen and (max-width: 960px) {
+  .item {
+    &.scroll {
+      padding-top: 27px;
+    }
+  }
 }
 
 @media screen and (max-width: 950px) {
   .item__main {
     display: flex;
     flex-direction: column;
+    width: 100%;
   }
 
   .item__block-right {

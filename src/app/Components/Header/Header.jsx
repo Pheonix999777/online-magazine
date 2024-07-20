@@ -12,10 +12,12 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import Menu from "../../../../public/icons/menu.svg";
 import { category, navbar } from "@/app/utils/data";
+import { IoClose } from "react-icons/io5";
 
 export default function Header() {
   const [isInputVisible, setIsInputVisible] = useState(false);
   const [isSticky, setSticky] = useState(false);
+  const [Open, setOpen] = useState(false);
 
   const LikeCarts = useSelector((state) => state.cart.item);
   const cart = useSelector((state) => state.add.item);
@@ -40,10 +42,15 @@ export default function Header() {
     };
   }, []);
 
+  const handleClick = () => {
+    setOpen(!Open);
+  };
+
   return (
     <header className="header">
       <Container>
-        <nav className="header__nav">
+        <nav className={`header__nav ${Open ? "active" : ""}`}>
+          <IoClose className="header__nav-close" onClick={handleClick} />
           <ul className="header__ul">
             {navbar.map((item, index) => (
               <li className="header__list" key={index}>
@@ -233,7 +240,9 @@ export default function Header() {
                 Get it
               </a>
               <button className="header__mobile-btn">
-                <Menu />
+                <span className="header__mobile-open" onClick={handleClick}>
+                  <Menu />
+                </span>
                 <User />
               </button>
             </div>
